@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "05 de março de 2018"
+date: "01 de dezembro de 2020"
 subtitle: "01 - Introdução e Estrutura do Curso"
 
 output:
@@ -44,12 +44,21 @@ library(knitr)
 
 ## Informações
 
-Site: http://www.est.ufmg.br/~thaispaiva/Disciplinas/2018_1/MetComp/
+**Site:** http://www.est.ufmg.br/~thaispaiva/Disciplinas/2020_2/MetComp/
+
+  - informações gerais;
+  - cronograma atualizado;
+  - materiais de aula (slides, arquivos de código, etc.).
+  
+**Moodle:** Turma TOPICOS ESPECIAIS EM ATUARIA - TTA
+
+  - anúncios e comunicação;
+  - entrega de atividades.
 
 
 ## Bibliografia
 
-- Charpentier, A. (Ed.). (2014). **Computational actuarial science with R**. CRC Press.
+- Charpentier, A. (Ed.). (2014). **Computational Actuarial Science with R**. CRC Press.
 
 ```{r fig.align='center', out.width = "20%", echo=FALSE, purl=FALSE}
 include_graphics("img/charpentier.jpg") 
@@ -222,7 +231,7 @@ $$\mathbb{P} \left( S = \sum_{i=1}^N X_i \leq 13654.43 \right) = 0.995 $$
 
 - R foi baseado no ambiente S (*Statistics*), criado na década de 70.
 
-- R é uma linguagem interpretada (*interpreted language*): as expressões digitadas no *consolde* são executados imediatamente pelo **interpretador**. Por exemplo, se você digitar `2+3` na linha de comando, o computador irá retornar `5`.
+- R é uma linguagem interpretada (*interpreted language*): as expressões digitadas no *console* são executados imediatamente pelo **interpretador**. Por exemplo, se você digitar `2+3` na linha de comando, o computador irá retornar `5`.
 
 
 ## A linguagem R
@@ -315,7 +324,7 @@ require(quantreg)
 
     1) Revisar os conceitos da aula de hoje;
     
-    2) Instalar (ou atualizar) a versão mais recente do `R` e `RStudio` (links na seção [*Ferramentas*](http://www.est.ufmg.br/~thaispaiva/Disciplinas/2018_1/MetComp/ferramentas/) do site).
+    2) Instalar (ou atualizar) a versão mais recente do `R` e `RStudio` (links na seção [*Ferramentas*](http://www.est.ufmg.br/~thaispaiva/Disciplinas/2020_2/MetComp/ferramentas/) do site).
     
     3) Fazer os exercícios da primeira parte da aula.
 

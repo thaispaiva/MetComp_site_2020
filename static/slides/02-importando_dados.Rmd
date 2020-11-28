@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "07 de março de 2018"
+date: "03 de dezembro de 2020"
 subtitle: "02 - Importando Dados"
 
 output:
@@ -107,7 +107,7 @@ y
 
 Vai criar o objeto `y` com valor $e+1$. 
 
-`y`também é da classe `numeric` e não é uma função de `x`, ou seja, se o valor `x` mudar, isso não vai afetar o valor de `y`.
+`y` também é da classe `numeric` e não é uma função de `x`, ou seja, se o valor `x` mudar, isso não vai afetar o valor de `y`.
 
 
 ## Classes
@@ -439,7 +439,7 @@ df
 
 - Ordernar a base de acordo com uma variável:
 
-(crescente em `x2` e decrescente em `x1`)
+(primeiro, crescente em `x2`, e depois decrescente em `x1`)
 
 ```{r}
 df [ order(df$x2, -df$x1), ]
