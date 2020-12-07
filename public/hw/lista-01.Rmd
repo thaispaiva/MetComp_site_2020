@@ -1,11 +1,11 @@
 ---
 title: "Lista de Exercícios 1"
 author: "(seu nome)"
-date: "19/03/2018"
+date: "10/12/2020"
 output:
-  pdf_document: default
-  html_document: default
   word_document: default
+  html_document: default
+  pdf_document: default
 ---
 
 
@@ -23,7 +23,8 @@ output:
 
 
 ```{r}
-print( log(4), digits = 15)
+print( log(4), digits = 16)
+sprintf("%.15f", log(4))
 ```
 
 

@@ -13,7 +13,7 @@ lessons:
     title: "Feriado (não teremos aula)"
   - date: "10/12/2020"
     title: "Aula Prática: Lista 1"
-    # hw: "hw-01.html"
+    hw: "hw-01.html"
   - date: "15/12/2020"
     title: "Revisão de R: principais funções e operações"
     # slides: "03-principais_funcoes.html"
