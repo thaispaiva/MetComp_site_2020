@@ -588,7 +588,7 @@ temp</pre>
 <li>Para incluir a interação entre variáveis categóricas \(X_1\) e \(X_2\), podemos usar as expressões <code>x1:x2</code> ou <code>x1*x2</code>.</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Expressões Simbólicas - Exemplo</h2></hgroup><article  class="smaller" id="expressões-simbólicas---exemplo">
+</article></slide><slide class=""><hgroup><h2>Expressões Simbólicas - Exemplo</h2></hgroup><article  id="expressões-simbólicas---exemplo" class="smaller">
 
 <ul>
 <li>Primeiro vamos criar um banco de dados simples:</li>
@@ -628,7 +628,7 @@ model.matrix(reg)[45:50,]</pre>
 ## 49           1   0   0   1   0   1
 ## 50           1   1   0   0   0   0</pre>
 
-</article></slide><slide class=""><hgroup><h2>Expressões Simbólicas</h2></hgroup><article  class="smaller" id="expressões-simbólicas-4">
+</article></slide><slide class=""><hgroup><h2>Expressões Simbólicas</h2></hgroup><article  id="expressões-simbólicas-4" class="smaller">
 
 <ul>
 <li>E se adicionarmos <code>X1:X2</code> no modelo?</li>
@@ -665,7 +665,7 @@ model.matrix(reg)[45:50,]</pre>
 
 <pre >## function (x) 
 ## gamma(x + 1)
-## &lt;bytecode: 0x00000000148f15b0&gt;
+## &lt;bytecode: 0x00000000150dbb98&gt;
 ## &lt;environment: namespace:base&gt;</pre>
 
 <pre class = 'prettyprint lang-r'>gamma</pre>
@@ -721,9 +721,10 @@ m</pre>
 <li>Para calcular soma por linha ou coluna, as funções <code>rowSums()</code> e <code>colSums()</code> podem ser mais rápidas que a função <code>apply</code>.</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Funções no R</h2></hgroup><article  id="funções-no-r-5">
+</article></slide><slide class=""><hgroup><h2>Funções no R</h2></hgroup><article  id="funções-no-r-5" class="smaller">
 
-<div class="columns-2">
+<!-- <div class="columns-2"> -->
+
 <ul>
 <li>Variações da função <code>apply</code>:</li>
 </ul>
@@ -743,7 +744,9 @@ base</pre>
 <pre class = 'prettyprint lang-r'>tapply(x, g, mean)</pre>
 
 <pre >##   F   M 
-## 5.0 5.5</pre></div>
+## 5.0 5.5</pre>
+
+</div>
 
 </article></slide><slide class=""><hgroup><h2>Funções no R</h2></hgroup><article  id="funções-no-r-6">
 
@@ -767,7 +770,7 @@ table(base$g, base$status)</pre>
 ##   M            0     2           2   4
 ##   Sum          1     3           2   6</pre>
 
-</article></slide><slide class=""><hgroup><h2>Funções no R</h2></hgroup><article  class="build" id="funções-no-r-7">
+</article></slide><slide class=""><hgroup><h2>Funções no R</h2></hgroup><article  id="funções-no-r-7" class="build">
 
 <ul>
 <li><p>Vimos várias funções no R para fazer diversos cálculos (e nem falamos de funções de pacotes!).</p></li>
@@ -841,13 +844,14 @@ T</pre>
 <li><p><em>Loops</em> podem ser dispendiosos e ineficientes! Confira se o cálculo que você quer fazer não pode ser feito com outra função, como <code>apply()</code>.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Condições lógicas</h2></hgroup><article  id="condições-lógicas">
+</article></slide><slide class=""><hgroup><h2>Condições lógicas</h2></hgroup><article  id="condições-lógicas" class="smaller">
 
 <ul>
 <li>Podemos fazer operações que dependem da avaliação de uma expressão lógica.</li>
 </ul>
 
-<div class="columns-2">
+<!-- <div class="columns-2"> -->
+
 <pre class = 'prettyprint lang-r'># Condições lógicas
 set.seed(1)
 u = runif(1)
@@ -863,16 +867,21 @@ u</pre>
 
 <pre >## [1] &quot;menor que 50%&quot;</pre>
 
-<pre class = 'prettyprint lang-r'>ifelse( u&gt;0.5, (&quot;maior que 50%&quot;),
-               (&quot;menor que 50%&quot;)  )</pre>
-
-<pre >## [1] &quot;menor que 50%&quot;</pre></div>
-
 </article></slide><slide class=""><hgroup><h2>Condições lógicas</h2></hgroup><article  id="condições-lógicas-1">
+
+<ul>
+<li>Podemos fazer operações que dependem da avaliação de uma expressão lógica.</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>ifelse( u&gt;0.5, (&quot;maior que 50%&quot;), (&quot;menor que 50%&quot;)  )</pre>
+
+<pre >## [1] &quot;menor que 50%&quot;</pre>
 
 <ul>
 <li>A diferença é que <code>ifelse()</code> é vetorizável, e o <code>if()</code> não.</li>
 </ul>
+
+</article></slide><slide class=""><hgroup><h2>Condições lógicas</h2></hgroup><article  id="condições-lógicas-2">
 
 <pre class = 'prettyprint lang-r'>u = runif(3)
 u</pre>
@@ -890,7 +899,7 @@ u</pre>
 
 <pre >## [1] &quot;menor que 50%&quot;</pre>
 
-</article></slide><slide class=""><hgroup><h2>Condições lógicas</h2></hgroup><article  id="condições-lógicas-2">
+</article></slide><slide class=""><hgroup><h2>Condições lógicas</h2></hgroup><article  id="condições-lógicas-3">
 
 <ul>
 <li>A diferença é que <code>ifelse()</code> é vetorizável, e o <code>if()</code> não.</li>

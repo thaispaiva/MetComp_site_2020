@@ -484,9 +484,9 @@ apply(m, MARGIN=1, FUN=mean)
 - Para calcular soma por linha ou coluna, as funções `rowSums()` e `colSums()` podem ser mais rápidas que a função `apply`.
 
 
-## Funções no R
+## Funções no R {.smaller}
 
-<div class="columns-2">
+<!-- <div class="columns-2"> -->
 - Variações da função `apply`:
 
 ```{r}
@@ -593,11 +593,11 @@ cumsum(T)
 - *Loops* podem ser dispendiosos e ineficientes! Confira se o cálculo que você quer fazer não pode ser feito com outra função, como `apply()`.
 
 
-## Condições lógicas
+## Condições lógicas {.smaller}
 
 - Podemos fazer operações que dependem da avaliação de uma expressão lógica.
 
-<div class="columns-2">
+<!-- <div class="columns-2"> -->
 ```{r}
 # Condições lógicas
 set.seed(1)
@@ -610,19 +610,23 @@ if(u> 0.5){
 }
 ```
 
+
+
+## Condições lógicas 
+
+- Podemos fazer operações que dependem da avaliação de uma expressão lógica.
+
 ```{r}
 
 
-ifelse( u>0.5, ("maior que 50%"),
-               ("menor que 50%")  )
+ifelse( u>0.5, ("maior que 50%"), ("menor que 50%")  )
 
 ```
-</div>
+
+- A diferença é que `ifelse()` é vetorizável, e o `if()` não.
 
 
 ## Condições lógicas
-
-- A diferença é que `ifelse()` é vetorizável, e o `if()` não.
 
 ```{r}
 u = runif(3)

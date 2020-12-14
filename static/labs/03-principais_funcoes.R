@@ -200,8 +200,7 @@ if(u> 0.5){
 
 
 
-ifelse( u>0.5, ("maior que 50%"),
-               ("menor que 50%")  )
+ifelse( u>0.5, ("maior que 50%"), ("menor que 50%")  )
 
 
 u = runif(3)
