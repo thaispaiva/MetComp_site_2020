@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "26 de março de 2018"
+date: "17 de dezembro de 2020"
 subtitle: "04 - Outras Funções"
 
 output:
@@ -50,7 +50,7 @@ file_name = "04-outras_funcoes"
 
 - Por exemplo, considere a seguinte função:
 
-$$S = \sum_{i=1}^n \frac{p_i \cdot d_i}{(1+d_i)^i} \qquad \mbox{para } x_i \in \mathbb{R}; \,\, p_i \in [0,1]; \,\, d_i \in \mathbb{R}_{+} $$
+$$S = \sum_{i=1}^n \frac{p_i \cdot x_i}{(1+d_i)^i} \qquad \mbox{para } x_i \in \mathbb{R}; \,\, p_i \in [0,1]; \,\, d_i \in \mathbb{R}_{+} $$
 
 
 ## Escrevendo suas próprias funções
@@ -116,9 +116,14 @@ qnorm(.95, mean=1, sd=2)  # quantil 95% para normal(1,4)
 
 - Também é possível usar funções **recursivamente**. Por exemplo, considere a função:
 
-$$h(n) = \begin{cases} 2\,.h\,.(n-1) + 1 & \mbox{se } n \geq 2 \\ 1 & \mbox{se } n=1 \end{cases} $$
+$$h(n) = \begin{cases} 2\,.h(n-1) + 1 & \mbox{se } n \geq 2 \\ 1 & \mbox{se } n=1 \end{cases} $$
 ```{r}
-h = function(n) if(n<=1) return(1) else return(2*h(n-1)+1)
+h = function(n){
+  if(n<=1) 
+    return(1) 
+  else
+    return(2*h(n-1)+1)
+}
 h(4)
 
 ```
@@ -158,7 +163,7 @@ slope(speed,dist)
 # Explorando funções para cálculo de Seguros
 
 
-## Explorando funções para cálculo de Seguros
+## Explorando funções para cálculo de Seguros {.smaller}
 
 - Vamos usar uma tabela de vida da França do pacote `lifecontingencies`:
 
