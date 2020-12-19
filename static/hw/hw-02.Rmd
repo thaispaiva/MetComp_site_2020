@@ -1,6 +1,6 @@
 ---
 title: "Lista de Exercícios 2"
-date: "Entrega: **01/04/2018** via Moodle (até as 23:55)"
+date: "Entrega: **09/01/2021** via Moodle (até as 23:59)"
 output: 
   html_document: 
     css: hw.css
@@ -12,7 +12,11 @@ output:
 
 ## 
 
-Você irá entregar essa lista de exercício no Moodle da disciplina. Você deverá submeter o **arquivo pdf gerado automaticamente pelo R** usando *markdown*. Não serão aceitos arquivos em outro formato!
+<!-- Você irá entregar essa lista de exercício no Moodle da disciplina. Você deverá submeter o **arquivo pdf gerado automaticamente pelo R** usando *markdown*. Não serão aceitos arquivos em outro formato! -->
+
+Você irá entregar essa lista de exercício no Moodle da disciplina. Você deverá submeter o **arquivo gerado automaticamente pelo R** usando *markdown*, preferencialmente o pdf. Para isso, siga as instruções abaixo para instalar os demais programas e pacotes. 
+
+Caso você tenha dificuldades nesse processo, você pode me enviar uma mensagem pelo Moodle com informações sobre os erros encontrados para que eu possa te ajudar.
 
 
 ## Instruções
@@ -35,14 +39,18 @@ knitr::include_graphics("img/cabecalho_pdf.png")
 ```
 </div>
 
-- Só comece os exercícios se você conseguir gerar o pdf corretamente. Não serão aceitos arquivos que forem gerados em outros formatos (como word) e depois salvos em pdf.
+<!-- - Só comece os exercícios se você conseguir gerar o pdf corretamente. Não serão aceitos arquivos que forem gerados em outros formatos (como word) e depois salvos em pdf. -->
 
+
+## Dicas
+
+- Lembre-se que você pode controlar como o R irá incluir os *chunks* de código com as opções `eval`, `echo`, `results` entre outras. Veja as principais opções no [cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf), ou então mais detalhes no link [https://rmarkdown.rstudio.com/lesson-3.html](https://rmarkdown.rstudio.com/lesson-3.html).
 
 
 ## Funções no R
 
 
-1) Escreva uma função `seqrep(n)` que retorne o vetor `(1; 2; 2; 3; 3; 3; : : : ; n)` onde cada inteiro $k$ é repetido $k$ vezes. Qual é o tamanho desse vetor para `n=50`? (Não imprima o vetor todo, acesse apenas o seu tamanho.)
+1) Escreva uma função `seqrep(n)` que retorne o vetor `(1; 2; 2; 3; 3; 3; : : : ; n)` onde cada inteiro $k$ é repetido $k$ vezes. Qual é o tamanho desse vetor para `n=50`? (Não imprima o vetor todo, informe apenas o seu tamanho.)
 
 
 2) Dado um vetor `x`, escreva uma função que retorne apenas os elementos de `x` que forem maiores do que a média de `x`.
@@ -82,11 +90,8 @@ x = runif(20,-1,1)
 10) Qual é a média da variável `Freq` para os acidentes do tipo `uncertain`? Considerando os acidentes do tipo `avoidable`, encontre os valores das demais variáveis (tempo afastado, faixa etária e período do dia) em que houve mais acidentes.
 
 
-## Dicas
-
-- Lembre-se que você pode controlar como o R irá incluir os *chunks* de código com as opções `eval`, `echo`, `results` entre outras. Veja as principais opções no [cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf), ou então mais detalhes no link [https://rmarkdown.rstudio.com/lesson-3.html](https://rmarkdown.rstudio.com/lesson-3.html).
 
 
-## Resolução
+<!-- ## Resolução -->
 
-Sugestão de respostas: [Resolução Lista 2](./resolucao/lista-02-resolucao.html)
+<!-- Sugestão de respostas: [Resolução Lista 2](./resolucao/lista-02-resolucao.html) -->

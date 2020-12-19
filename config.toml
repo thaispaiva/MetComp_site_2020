@@ -11,7 +11,8 @@ theme = "material"
 paginate = 7
 relativeurls = true
 publishDir = "public"
-ignoreFiles = [ "hw/resolucao/.*",  "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+# ignoreFiles = [ "hw/resolucao/.*",  "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$" ]
+ignoreFiles = [ "hw/resolucao/.*",  "\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$" ]
 
 enableEmoji = true
 
