@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "02 de abril de 2018"
+date: "07 de janeiro de 2021"
 subtitle: "06 - Mais Gráficos no R"
 
 output:

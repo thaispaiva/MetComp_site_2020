@@ -4,7 +4,6 @@
   <title>Métodos Computacionais para Análise de Risco</title>
 
   <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="generator" content="pandoc" />
 
@@ -64,6 +63,10 @@
       font-style: italic;
     }
 
+    summary {
+      display: list-item;
+    }
+
     slides > slide {
       -webkit-transition: all 0.4s ease-in-out;
       -moz-transition: all 0.4s ease-in-out;
@@ -79,7 +82,81 @@
       transition: opacity 0.6s ease-in 0.4s;
       opacity: 0;
     }
+/* https://github.com/ropensci/plotly/pull/524#issuecomment-468142578 */
+slide:not(.current) .plotly.html-widget{
+  display: block;
+}
 
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+            code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode { white-space: pre; position: relative; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    code.sourceCode { white-space: pre-wrap; }
+    code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+        
     slides > slide:not(.nobackground):before {
       font-size: 12pt;
       content: "";
@@ -112,7 +189,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">28 de março de 2018</p>
+            <p style="margin-top: 6px; margin-left: -2px;">05 de janeiro de 2021</p>
           </hgroup>
   </slide>
 
@@ -131,9 +208,9 @@
 <li><p>Gráficos 3D</p></li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Gráficos Básicos</h2></hgroup><article  id="graficos-basicos">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Gráficos Básicos</h2></hgroup><article  id="gráficos-básicos">
 
-</article></slide><slide class=""><hgroup><h2>Gráficos no R</h2></hgroup><article  id="graficos-no-r">
+</article></slide><slide class=""><hgroup><h2>Gráficos no R</h2></hgroup><article  id="gráficos-no-r">
 
 <ul>
 <li><p>A função básica para fazer um gráfico no R é o <code>plot()</code>.</p></li>
@@ -147,7 +224,7 @@
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos no R</h2></hgroup><article  id="graficos-no-r-1">
+</article></slide><slide class=""><hgroup><h2>Gráficos no R</h2></hgroup><article  id="gráficos-no-r-1">
 
 <ul>
 <li><p>Depois de fazer o gráfico básico, podemos adicionar elementos como:</p>
@@ -161,13 +238,13 @@
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos Básicos</h2></hgroup><article  id="graficos-basicos-1">
+</article></slide><slide class=""><hgroup><h2>Gráficos Básicos</h2></hgroup><article  id="gráficos-básicos-1">
 
 <ul>
 <li>Antes de ver as opções para customizar os gráficos, vamos ver alguns tipos de gráficos com comandos específicos para algumas classes de dados.</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos Básicos</h2></hgroup><article  id="graficos-basicos-2">
+</article></slide><slide class=""><hgroup><h2>Gráficos Básicos</h2></hgroup><article  id="gráficos-básicos-2">
 
 <ul>
 <li>Vamos usar novamente o banco de dados de ciclones tropicais nos EUA entre 1899-2006.</li>
@@ -186,14 +263,14 @@ attach(StormMax)</pre>
 ## 1900 1910 1920 1930 1940 1950 1960 1970 1980 1990 2000 
 ##  183  144  123  204  191  199  179  186  178  191  212</pre>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos de Barra</h2></hgroup><article  id="graficos-de-barra">
+</article></slide><slide class=""><hgroup><h2>Gráficos de Barra</h2></hgroup><article  id="gráficos-de-barra">
 
 <pre class = 'prettyprint lang-r'>barplot( table( trunc(Yr/10)*10 )[-1] )</pre>
 
 <p><img src="05-graficos_files/figure-html/unnamed-chunk-8-1.png" width="720" style="display: block; margin: auto;" /></p>
 
 </article></slide><slide class=""><hgroup><h2>Gráficos de Barra </h2><h3> <span class="green3">
-Exercício</span></h3></hgroup><article  id="graficos-de-barra-exercicio">
+Exercício</span></h3></hgroup><article  id="gráficos-de-barra-exercício">
 
 <ul>
 <li><p>Olhe as opções dos argumentos da função <code>barplot()</code> no <em>help</em>.</p></li>
@@ -206,14 +283,14 @@ Exercício</span></h3></hgroup><article  id="graficos-de-barra-exercicio">
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos de linhas</h2></hgroup><article  id="graficos-de-linhas">
+</article></slide><slide class=""><hgroup><h2>Gráficos de linhas</h2></hgroup><article  id="gráficos-de-linhas">
 
 <pre class = 'prettyprint lang-r'>decade = trunc(Yr/10)*10
 interaction.plot(decade, Region, Wmax, type=&quot;b&quot;, pch=1:5)</pre>
 
 <p><img src="05-graficos_files/figure-html/unnamed-chunk-10-1.png" width="720" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos de linhas</h2></hgroup><article  id="graficos-de-linhas-1">
+</article></slide><slide class=""><hgroup><h2>Gráficos de linhas</h2></hgroup><article  id="gráficos-de-linhas-1">
 
 <ul>
 <li><p>A função <code>interaction.plot</code> faz na verdade, o gráfico de uma estatística descritiva (<em>default</em> é a média) de uma variável resposta (numérica) para as interações de duas variáveis categóricas.</p>
@@ -225,7 +302,7 @@ interaction.plot(decade, Region, Wmax, type=&quot;b&quot;, pch=1:5)</pre>
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos de linhas</h2></hgroup><article  id="graficos-de-linhas-2">
+</article></slide><slide class=""><hgroup><h2>Gráficos de linhas</h2></hgroup><article  id="gráficos-de-linhas-2">
 
 <ul>
 <li><p>No gráfico anterior, escolhemos <code>type=&quot;b&quot;</code> para plotar os pontos e linhas entre as observações, e escolhemos os símbolos de 1:5 para os pontos de diferentes categorias.</p></li>
@@ -235,7 +312,7 @@ interaction.plot(decade, Region, Wmax, type=&quot;b&quot;, pch=1:5)</pre>
 <p><img src="05-graficos_files/figure-html/unnamed-chunk-11-1.png" width="720" style="display: block; margin: auto;" /></p>
 
 </article></slide><slide class=""><hgroup><h2>Gráficos de linhas </h2><h3> <span class="green3">
-Exercício</span></h3></hgroup><article  id="graficos-de-linhas-exercicio">
+Exercício</span></h3></hgroup><article  id="gráficos-de-linhas-exercício">
 
 <ul>
 <li><p>Olhe as opções dos argumentos da função <code>interaction.plot()</code> no <em>help</em>.</p></li>
@@ -248,7 +325,7 @@ Exercício</span></h3></hgroup><article  id="graficos-de-linhas-exercicio">
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos lado a lado</h2></hgroup><article  id="graficos-lado-a-lado">
+</article></slide><slide class=""><hgroup><h2>Gráficos lado a lado</h2></hgroup><article  id="gráficos-lado-a-lado">
 
 <ul>
 <li>Histograma e função de distribuição empírica de uma amostra da normal padrão:</li>
@@ -256,7 +333,7 @@ Exercício</span></h3></hgroup><article  id="graficos-de-linhas-exercicio">
 
 <p><img src="05-graficos_files/figure-html/unnamed-chunk-13-1.png" width="960" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos lado a lado</h2></hgroup><article  id="graficos-lado-a-lado-1">
+</article></slide><slide class=""><hgroup><h2>Gráficos lado a lado</h2></hgroup><article  id="gráficos-lado-a-lado-1">
 
 <pre class = 'prettyprint lang-r'>set.seed(123)
 x = rnorm(100)    # gerando amostra
@@ -278,7 +355,7 @@ legend(&quot;topleft&quot;, legend=c(&quot;Histograma&quot;,&quot;Densidade Norm
        col=c(&quot;grey&quot;,&quot;black&quot;,&quot;black&quot;), lwd=c(NA,1,1), lty=c(NA,2,1),
        pch=c(15,NA,NA), bty=&quot;n&quot;)</pre>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos lado a lado</h2></hgroup><article  id="graficos-lado-a-lado-2">
+</article></slide><slide class=""><hgroup><h2>Gráficos lado a lado</h2></hgroup><article  id="gráficos-lado-a-lado-2">
 
 <pre class = 'prettyprint lang-r'>## grafico 2: função de distribuição empírica
 F.empirica = function(y){
@@ -295,7 +372,7 @@ lines(u, pnorm(u,mean(x),sd(x)), lty=2)   # f.d. normal
 legend(&quot;topleft&quot;, c(&quot;F.D. Empírica&quot;, &quot;F.D. Normal&quot;, &quot;F.D. Kernel&quot;),
        col=c(&quot;grey&quot;,&quot;black&quot;,&quot;black&quot;), lwd=c(2,1,1), lty=c(1,2,1), bty=&quot;n&quot;)</pre>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos para classes de objetos</h2></hgroup><article  id="graficos-para-classes-de-objetos">
+</article></slide><slide class=""><hgroup><h2>Gráficos para classes de objetos</h2></hgroup><article  id="gráficos-para-classes-de-objetos">
 
 <ul>
 <li>É possível utilizar as funções básicas de gráficos do R para plotar informações de objetos mais complexos, como a saída de uma regressão:</li>
@@ -309,7 +386,7 @@ attach(StormMax.Basin)</pre>
 ## 
 ##     nao, Region, soi, split, sst, sstmda, sun, Wmax, Yr</pre>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos para classes de objetos</h2></hgroup><article  id="graficos-para-classes-de-objetos-1">
+</article></slide><slide class=""><hgroup><h2>Gráficos para classes de objetos</h2></hgroup><article  id="gráficos-para-classes-de-objetos-1">
 
 <ul>
 <li>Boxplot da velocidade de ciclones por ano (para a região &ldquo;Basin&rdquo;):</li>
@@ -319,7 +396,7 @@ attach(StormMax.Basin)</pre>
 
 <p><img src="05-graficos_files/figure-html/unnamed-chunk-19-1.png" width="720" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos para classes de objetos</h2></hgroup><article  id="graficos-para-classes-de-objetos-2">
+</article></slide><slide class=""><hgroup><h2>Gráficos para classes de objetos</h2></hgroup><article  id="gráficos-para-classes-de-objetos-2">
 
 <ul>
 <li><p>Para objetos do tipo <code>lm</code>, a função <code>plot()</code> retorna alguns gráficos de diagnóstico do modelo:</p></li>
@@ -335,9 +412,9 @@ plot(model)</pre>
 
 <p><img src="05-graficos_files/figure-html/unnamed-chunk-21-1.png" width="768" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Gráficos 3D</h2></hgroup><article  id="graficos-3d">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Gráficos 3D</h2></hgroup><article  id="gráficos-3d">
 
-</article></slide><slide class=""><hgroup><h2>Gráficos 3D</h2></hgroup><article  id="graficos-3d-1">
+</article></slide><slide class=""><hgroup><h2>Gráficos 3D</h2></hgroup><article  id="gráficos-3d-1">
 
 <ul>
 <li><p>Para visualizar como fazer gráficos 3D, vamos considerar uma distribuição normal bivariada.</p></li>
@@ -350,7 +427,7 @@ plot(model)</pre>
   exp( -(x1^2 + x2^2 - 2*r*x1*x2)/( 2*(1-r^2) ) )/( 2*pi*sqrt(1-r^2) )
 }</pre>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos 3D</h2></hgroup><article  id="graficos-3d-2">
+</article></slide><slide class=""><hgroup><h2>Gráficos 3D</h2></hgroup><article  id="gráficos-3d-2">
 
 <pre class = 'prettyprint lang-r'>x = y = seq(-2.5, 2.5, by=.25)
 z = outer(x, y, function(u,v) binorm(u,v,r=.4))
@@ -369,11 +446,11 @@ contour(x, y, z, add=TRUE)
 # grafico 2: superfície 3D
 persp(x, y, z)</pre>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos 3D</h2></hgroup><article  id="graficos-3d-3">
+</article></slide><slide class=""><hgroup><h2>Gráficos 3D</h2></hgroup><article  id="gráficos-3d-3">
 
 <p><img src="05-graficos_files/figure-html/unnamed-chunk-25-1.png" width="960" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos 3D</h2></hgroup><article  id="graficos-3d-4">
+</article></slide><slide class=""><hgroup><h2>Gráficos 3D</h2></hgroup><article  id="gráficos-3d-4">
 
 <ul>
 <li>Alterando algumas opções no gráfico da superfície 3D:</li>
@@ -384,7 +461,7 @@ persp(x, y, z)</pre>
 <p><img src="05-graficos_files/figure-html/unnamed-chunk-26-1.png" width="720" style="display: block; margin: auto;" /></p>
 
 </article></slide><slide class=""><hgroup><h2>Gráficos 3D </h2><h3> <span class="green3">
-Exercício</span></h3></hgroup><article  id="graficos-3d-exercicio">
+Exercício</span></h3></hgroup><article  id="gráficos-3d-exercício">
 
 <ul>
 <li><p>Veja as documentações para as funções utilizadas nos gráficos anteriores.</p></li>
