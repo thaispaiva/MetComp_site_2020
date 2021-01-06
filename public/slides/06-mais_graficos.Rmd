@@ -11,7 +11,8 @@ output:
     highlight: pygments
     logo: img/logo_ufmg.png
     widescreen: true
-    self_contained: false
+    # self_contained: false
+    self_contained: true
     lib_dir: libs
   beamer_presentation:
     highlight: pygments
@@ -63,7 +64,7 @@ include_graphics("img/bike2.jpg")
 
 - `ggplot2` é um pacote para criar gráficos de maneira <span class="red3">declarativa</span> baseada no livro *The Grammar of Graphics* de Leland Wilkinson.
 
-- Você fornece os dados, informa como mapear as variáveis esteticamente, qual função primitica usar, e o pacote cuida do resto.
+- Você fornece os dados, informa como mapear as variáveis esteticamente, qual função primitiva usar, e o pacote cuida do resto.
 
 - O pacote [`ggplot2`](http://ggplot2.tidyverse.org) é parte da coleção de pacotes [`tidyverse`](https://www.tidyverse.org/packages/) para **ciência de dados**.
 
