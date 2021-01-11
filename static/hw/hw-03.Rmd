@@ -1,6 +1,6 @@
 ---
 title: "Lista de Exercícios 3"
-date: "Entrega: **08/04/2018** via Moodle (até as 23:55)"
+date: "Entrega: **20/01/2021** via Moodle (até as 23:59)"
 output: 
   html_document: 
     css: hw.css
@@ -12,7 +12,8 @@ output:
 
 ## 
 
-Você irá entregar essa lista de exercício no Moodle da disciplina. Você deverá submeter o **arquivo pdf gerado automaticamente pelo R** usando *markdown*. Não serão aceitos arquivos em outro formato!
+Você irá entregar essa lista de exercício no Moodle da disciplina. Você deverá submeter preferencialmente o **arquivo pdf gerado automaticamente pelo R** usando *markdown*. 
+<!-- Não serão aceitos arquivos em outro formato! -->
 
 
 ## Instruções
@@ -65,7 +66,7 @@ mpg
 8) Refaça o gráfico do exercício anterior, mas separe em diferentes painéis os pontos de cada tipo de direção usando o comando `facet_grid()`. Você acha que essa visualização facilita a comparação dos diferentes grupos de carros?
 
 
-## Resolução
+<!-- ## Resolução -->
 
-Sugestão de respostas: [Resolução Lista 3](./resolucao/lista-03-resolucao.html)
+<!-- Sugestão de respostas: [Resolução Lista 3](./resolucao/lista-03-resolucao.html) -->
 

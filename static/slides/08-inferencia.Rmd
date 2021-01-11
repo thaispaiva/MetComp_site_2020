@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "09 de abril de 2018"
+date: "14 de janeiro de 2021"
 subtitle: "08 - Inferência"
 
 output:

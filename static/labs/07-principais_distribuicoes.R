@@ -1,6 +1,9 @@
 ## EST171 - Métodos Computacionais para Análise de Risco
 ## Código da aula 07 - Principais Distribuições Estatísticas
 
+
+
+
 # distribuições de Pearson
 library(PearsonDS)
 x <- seq(-1, 6, by=1e-3)
@@ -24,6 +27,9 @@ lines(x[y7 != 0], y7[y7 != 0], col="grey", lty=4, lwd=2)
 legend("topright", leg=paste("Pearson", 0:7), lty=1:4,
        col=c(rep("black", 4), rep("grey", 4)))
 
+
+
+
 # transformações
 f <- function(x) dgamma(x,2)
 f1 <- function(x) f(x-1)
@@ -33,7 +39,7 @@ f4 <- function(x) f(1/x)/x^2
 f5 <- function(x) f(exp(x))*exp(x)
 f6 <- function(x) f(log(x))/x
 x=seq(0,10,by=.025)
-plot(x,f(x), ylim=c(0, 1.3), xlim=c(0, 10), main="Theoretial densities",
+plot(x,f(x), ylim=c(0, 1.3), xlim=c(0, 10), main="Theoretical densities",
      lwd=2, type="l", xlab="x", ylab="")
 lines(x,f1(x), lty=2, lwd=2)
 lines(x,f2(x), lty=3, lwd=2)
@@ -44,16 +50,22 @@ lines(x,f6(x), lty=3, col="grey", lwd=2)
 legend("topright", lty=1:4, col=c(rep("black", 4), rep("grey", 3)),
        leg=c("X","X+1","2X", "sqrt(X)", "1/X", "log(X)", "exp(X)"))
 
+
+
+
 ## Distribuições mistas
 
 # distribuição beta modificada
+
 dbetaOM = function(x, prob, a, b)
   dbeta(x, a, b)*(1-prob)*(x != 1) + prob*(x == 1)
 
 pbetaOM = function(q, prob, a, b)
   pbeta(q, a, b)*(1-prob) + prob*(q >= 1)
 
+
 # mistura gama e pareto
+
 library(actuar)   # carregando pacote com dist. pareto
 
 dmixgampar <- function(x, prob, nu, lambda, alpha, theta)

@@ -4,7 +4,6 @@
   <title>Métodos Computacionais para Análise de Risco</title>
 
   <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="generator" content="pandoc" />
 
@@ -64,6 +63,10 @@
       font-style: italic;
     }
 
+    summary {
+      display: list-item;
+    }
+
     slides > slide {
       -webkit-transition: all 0.4s ease-in-out;
       -moz-transition: all 0.4s ease-in-out;
@@ -79,7 +82,81 @@
       transition: opacity 0.6s ease-in 0.4s;
       opacity: 0;
     }
+/* https://github.com/ropensci/plotly/pull/524#issuecomment-468142578 */
+slide:not(.current) .plotly.html-widget{
+  display: block;
+}
 
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+            code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode { white-space: pre; position: relative; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    code.sourceCode { white-space: pre-wrap; }
+    code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+        
     slides > slide:not(.nobackground):before {
       font-size: 12pt;
       content: "";
@@ -112,7 +189,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">09 de abril de 2018</p>
+            <p style="margin-top: 6px; margin-left: -2px;">14 de janeiro de 2021</p>
           </hgroup>
   </slide>
 
@@ -125,9 +202,9 @@
 <li><p>Verificação da Adequação do Ajuste</p></li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Inferência Paramétrica</h2></hgroup><article  id="inferencia-parametrica">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Inferência Paramétrica</h2></hgroup><article  id="inferência-paramétrica">
 
-</article></slide><slide class=""><hgroup><h2>Inferência Paramétrica</h2></hgroup><article  id="inferencia-parametrica-1">
+</article></slide><slide class=""><hgroup><h2>Inferência Paramétrica</h2></hgroup><article  id="inferência-paramétrica-1">
 
 <ul>
 <li><p>O que é inferência paramétrica?</p>
@@ -142,7 +219,7 @@
 
 <p>\[X \sim F(.; \boldsymbol \theta) \]</p>
 
-</article></slide><slide class=""><hgroup><h2>Inferência Paramétrica</h2></hgroup><article  id="inferencia-parametrica-2">
+</article></slide><slide class=""><hgroup><h2>Inferência Paramétrica</h2></hgroup><article  id="inferência-paramétrica-2">
 
 <ul>
 <li>Por exemplo, vamos considerar a <span class="red3">
@@ -156,9 +233,9 @@
 <li><p>Depois de encontrar um estimador, o analista pode obter suas medidas de interesse (média, variância, quantis, probabilidade de sobrevivência, etc.) a partir da distribuição estimada \(F(x; \hat{\boldsymbol \theta})\).</p></li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Estimador de Máxima Verossimilhança</h2></hgroup><article  id="estimador-de-maxima-verossimilhanca">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Estimador de Máxima Verossimilhança</h2></hgroup><article  id="estimador-de-máxima-verossimilhança">
 
-</article></slide><slide class=""><hgroup><h2>Estimador de Máxima Verossimilhança</h2></hgroup><article  id="estimador-de-maxima-verossimilhanca-1">
+</article></slide><slide class=""><hgroup><h2>Estimador de Máxima Verossimilhança</h2></hgroup><article  id="estimador-de-máxima-verossimilhança-1">
 
 <ul>
 <li>Como o nome sugere, o EMV é o estimador que maximiza a <strong>verossimilhança</strong> com relação a \(\boldsymbol \theta\):</li>
@@ -231,9 +308,9 @@ fgamEMV</pre>
 
 <p><img src="08-inferencia_files/figure-html/unnamed-chunk-8-1.png" width="768" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Método de Momentos</h2></hgroup><article  id="metodo-de-momentos">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Método de Momentos</h2></hgroup><article  id="método-de-momentos">
 
-</article></slide><slide class=""><hgroup><h2>Método de Momentos</h2></hgroup><article  id="metodo-de-momentos-1">
+</article></slide><slide class=""><hgroup><h2>Método de Momentos</h2></hgroup><article  id="método-de-momentos-1">
 
 <ul>
 <li><p>Também podemos encontrar estimadores para os parâmetros usando o Método de Momentos.</p></li>
@@ -242,7 +319,7 @@ fgamEMV</pre>
 
 <p>\[\mathbb{E}(X^k | \boldsymbol \theta) = \frac{1}{n}\sum_{i=1}^n x_i^k \] para \(k=1,\dots,d\), onde \(d\) é o número de parâmetros a estimar, e \(x_i\) são as \(n\) observações da variável \(X\).</p>
 
-</article></slide><slide class=""><hgroup><h2>Método de Momentos</h2></hgroup><article  id="metodo-de-momentos-2">
+</article></slide><slide class=""><hgroup><h2>Método de Momentos</h2></hgroup><article  id="método-de-momentos-2">
 
 <ul>
 <li><p>Por exemplo, considere \(X \sim Gama(\alpha, \lambda)\).</p></li>
@@ -267,7 +344,7 @@ cbind(EMV=fgamEMV$estimate, EMM=fgamEMM$estimate)</pre>
 ## shape 2.398655 2.229563
 ## rate  2.362486 2.195851</pre>
 
-</article></slide><slide class=""><hgroup><h2>Outros métodos de Estimação</h2></hgroup><article  id="outros-metodos-de-estimacao">
+</article></slide><slide class=""><hgroup><h2>Outros métodos de Estimação</h2></hgroup><article  id="outros-métodos-de-estimação">
 
 <ul>
 <li><p>Método dos Quantis (Seção 2.2.3 do livro)</p>
@@ -278,9 +355,9 @@ cbind(EMV=fgamEMV$estimate, EMM=fgamEMM$estimate)</pre>
 <p>consiste em encontrar o estimador que minimiza alguma medida de distância entre a distribuição acumulada empírica e teórica</p></li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Medidas de Adequação de Ajuste</h2></hgroup><article  id="medidas-de-adequacao-de-ajuste">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Medidas de Adequação de Ajuste</h2></hgroup><article  id="medidas-de-adequação-de-ajuste">
 
-</article></slide><slide class=""><hgroup><h2>Medidas de Adequação de Ajuste</h2></hgroup><article  id="medidas-de-adequacao-de-ajuste-1">
+</article></slide><slide class=""><hgroup><h2>Medidas de Adequação de Ajuste</h2></hgroup><article  id="medidas-de-adequação-de-ajuste-1">
 
 <ul>
 <li><p>Como escolher entre métodos de estimação ou distribuições?</p></li>
@@ -315,7 +392,7 @@ lines(density(x), lty=5, lwd=2, col=4)</pre>
 
 <p><img src="08-inferencia_files/figure-html/unnamed-chunk-11-1.png" width="720" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class=""><hgroup><h2>Gráfico da Função de Distribuição Acumulada</h2></hgroup><article  id="grafico-da-funcao-de-distribuicao-acumulada">
+</article></slide><slide class=""><hgroup><h2>Gráfico da Função de Distribuição Acumulada</h2></hgroup><article  id="gráfico-da-função-de-distribuição-acumulada">
 
 <ul>
 <li>Outra maneira para verificar o ajuste de uma distribuição é fazer o gráfico da <strong>função de distribuição ajustada</strong> \(F(.;\hat{\theta})\) e a <strong>função de distribuição empírica</strong> \(F_n\).</li>
@@ -323,7 +400,7 @@ lines(density(x), lty=5, lwd=2, col=4)</pre>
 
 <p>\[F_n(x) = \sum_{i=1}^n \mathbb{1}_{x_i \leq x} \]</p>
 
-</article></slide><slide class=""><hgroup><h2>Gráfico da Função de Distribuição Acumulada</h2></hgroup><article  id="grafico-da-funcao-de-distribuicao-acumulada-1">
+</article></slide><slide class=""><hgroup><h2>Gráfico da Função de Distribuição Acumulada</h2></hgroup><article  id="gráfico-da-função-de-distribuição-acumulada-1">
 
 <ul>
 <li>Para ilustrar, vamos usar outro banco de dados. O banco <code>danishuni</code> contém dados de perda em incêndios de uma resseguradora em Copenhague, na Dinamarca, entre 1980 e 1990.</li>
@@ -342,7 +419,7 @@ head(danishuni)</pre>
 ## 6 1980-01-10 8.725274</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo - Dados de incêndio</strong></span></h2></hgroup><article  id="exemplo---dados-de-incendio">
+<strong>Exemplo - Dados de incêndio</strong></span></h2></hgroup><article  id="exemplo---dados-de-incêndio">
 
 <pre class = 'prettyprint lang-r'>x = danishuni$Loss
 hist(x, main=&quot;Histograma das indenizações de incêndio&quot;)</pre>
@@ -350,7 +427,7 @@ hist(x, main=&quot;Histograma das indenizações de incêndio&quot;)</pre>
 <p><img src="08-inferencia_files/figure-html/unnamed-chunk-13-1.png" width="720" style="display: block; margin: auto;" /></p>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo - Dados de incêndio</strong></span></h2></hgroup><article  id="exemplo---dados-de-incendio-1">
+<strong>Exemplo - Dados de incêndio</strong></span></h2></hgroup><article  id="exemplo---dados-de-incêndio-1">
 
 <ul>
 <li>Vamos ajustar três distribuições: <span class="red3">
@@ -373,7 +450,7 @@ fmixgampar = fitdist(x, &quot;mixgampar&quot;,
                      start=list(prob=1/2, nu=1, lambda=1, alpha=2, theta=2), lower=0)</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo - Dados de incêndio</strong></span></h2></hgroup><article  id="exemplo---dados-de-incendio-2">
+<strong>Exemplo - Dados de incêndio</strong></span></h2></hgroup><article  id="exemplo---dados-de-incêndio-2">
 
 <pre class = 'prettyprint lang-r'>## Resultados dos modelos separados (Gama e Pareto) e modelo de mistura
 cbind(SINGLE= c(NA, fgam$estimate, fpar$estimate), MIXTURE=fmixgampar$estimate)</pre>
@@ -386,7 +463,7 @@ cbind(SINGLE= c(NA, fgam$estimate, fpar$estimate), MIXTURE=fmixgampar$estimate)<
 ## scale 13.8424418 29.9966023</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo - Dados de incêndio</strong></span></h2></hgroup><article  class="smaller" id="exemplo---dados-de-incendio-3">
+<strong>Exemplo - Dados de incêndio</strong></span></h2></hgroup><article  id="exemplo---dados-de-incêndio-3" class="smaller">
 
 <pre class = 'prettyprint lang-r'>## Gráfico das funções de distribuição ajustadas
 cdfcomp(list(fgam, fpar, fmixgampar), xlogscale=TRUE, datacol=&quot;grey&quot;, lwd=2,
@@ -402,7 +479,7 @@ cdfcomp(list(fgam, fpar, fmixgampar), xlogscale=TRUE, datacol=&quot;grey&quot;, 
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo - Dados de incêndio</strong></span></h2></hgroup><article  id="exemplo---dados-de-incendio-4">
+<strong>Exemplo - Dados de incêndio</strong></span></h2></hgroup><article  id="exemplo---dados-de-incêndio-4">
 
 <pre class = 'prettyprint lang-r'>## qqplot
 qqcomp(list(fgam, fpar, fmixgampar), xlog=TRUE, ylog=TRUE, main=&quot;QQ-plot Dados de Incêndio&quot;,
@@ -410,7 +487,7 @@ qqcomp(list(fgam, fpar, fmixgampar), xlog=TRUE, ylog=TRUE, main=&quot;QQ-plot Da
 
 <p><img src="08-inferencia_files/figure-html/unnamed-chunk-18-1.png" width="720" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class=""><hgroup><h2>Gráficos para Adequação de Ajuste</h2></hgroup><article  id="graficos-para-adequacao-de-ajuste">
+</article></slide><slide class=""><hgroup><h2>Gráficos para Adequação de Ajuste</h2></hgroup><article  id="gráficos-para-adequação-de-ajuste">
 
 <ul>
 <li><p>A função <code>plot</code> aplicada a um objeto do tipo <code>fitdist</code> retorna os gráficos que acabamos de ver:</p>
@@ -423,7 +500,7 @@ qqcomp(list(fgam, fpar, fmixgampar), xlog=TRUE, ylog=TRUE, main=&quot;QQ-plot Da
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Testes de Adequação de Ajuste</h2></hgroup><article  id="testes-de-adequacao-de-ajuste">
+</article></slide><slide class=""><hgroup><h2>Testes de Adequação de Ajuste</h2></hgroup><article  id="testes-de-adequação-de-ajuste">
 
 <ul>
 <li><p>Podemos usar testes estatísticos para complementar a nossa verificação da qualidade do ajuste.</p></li>
@@ -435,7 +512,7 @@ qqcomp(list(fgam, fpar, fmixgampar), xlog=TRUE, ylog=TRUE, main=&quot;QQ-plot Da
 
 <p>\[\Delta^2 = \sum_{i=0}^m \frac{(n_i - n.p_i)^2}{n.p_i} \] onde \(n_i\) é a frequência empírica para a célula \(i\), \(n\) é o número total de observações; \(p_i=P(X=i; \,\theta)\) é a probabilidade teórica, e \(m\) é o número de células.</p>
 
-</article></slide><slide class=""><hgroup><h2>Testes de Adequação de Ajuste</h2></hgroup><article  id="testes-de-adequacao-de-ajuste-1">
+</article></slide><slide class=""><hgroup><h2>Testes de Adequação de Ajuste</h2></hgroup><article  id="testes-de-adequação-de-ajuste-1">
 
 <ul>
 <li><p>Na prática, o número de células é fixado pelo analista, ou escolhido tal que as frequências observadas sejam maiores do que 5 e \(p_i\) é substituído por \(\hat{p}_i\).</p></li>
@@ -445,7 +522,7 @@ qqcomp(list(fgam, fpar, fmixgampar), xlog=TRUE, ylog=TRUE, main=&quot;QQ-plot Da
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo - Testes de Adequação de Ajuste</strong></span></h2></hgroup><article  id="exemplo---testes-de-adequacao-de-ajuste">
+<strong>Exemplo - Testes de Adequação de Ajuste</strong></span></h2></hgroup><article  id="exemplo---testes-de-adequação-de-ajuste">
 
 <ul>
 <li><p><strong>Dados</strong>: <code>tplclaimnumber</code> do pacote <code>CASdatasets</code> contém dados de apólices de seguro contra terceiros. Os dados são o número de indenizações registradas para cada apólice com duração de um ano.</p></li>
@@ -464,7 +541,7 @@ summary(tplclaimnumber)</pre>
 ##  Max.   :6114330   Max.   :16.00000   Max.   :100.0</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo - Testes de Adequação de Ajuste</strong></span></h2></hgroup><article  id="exemplo---testes-de-adequacao-de-ajuste-1">
+<strong>Exemplo - Testes de Adequação de Ajuste</strong></span></h2></hgroup><article  id="exemplo---testes-de-adequação-de-ajuste-1">
 
 <pre class = 'prettyprint lang-r'>x = tplclaimnumber$claim.number
 
@@ -483,7 +560,7 @@ qpoisZM &lt;- function(p, prob, lambda)
                   lower=c(0,0), upper=c(1, Inf))  # poisson modificada</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo - Testes de Adequação de Ajuste</strong></span></h2></hgroup><article  class="smaller" id="exemplo---testes-de-adequacao-de-ajuste-2">
+<strong>Exemplo - Testes de Adequação de Ajuste</strong></span></h2></hgroup><article  id="exemplo---testes-de-adequação-de-ajuste-2" class="smaller">
 
 <pre class = 'prettyprint lang-r'>gofstat(list(fpois, fnbinom, fpoisZM), chisqbreaks=c(0:4, 9),
         discrete=TRUE, fitnames=c(&quot;Poisson&quot;,&quot;NegBinomial&quot;,&quot;ZM-Poisson&quot;))</pre>
@@ -508,7 +585,7 @@ qpoisZM &lt;- function(p, prob, lambda)
 ## Bayesian Information Criterion 226891.8    225398.0   225608.5</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo - Testes de Adequação de Ajuste</strong></span></h2></hgroup><article  id="exemplo---testes-de-adequacao-de-ajuste-3">
+<strong>Exemplo - Testes de Adequação de Ajuste</strong></span></h2></hgroup><article  id="exemplo---testes-de-adequação-de-ajuste-3">
 
 <ul>
 <li>Pelo valor da estatística \(\Delta^2\), pela tabela com os valores de \(n_i\) observados e \(n.\hat{p}_i\) estimado para cada distribuição, e pelos critérios AIC e BIC, a distribuição <strong>Binomial Negativa</strong> fornece o melhor ajuste para esses dados.</li>
