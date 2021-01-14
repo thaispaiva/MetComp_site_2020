@@ -161,7 +161,7 @@ para $k=1,\dots,d$, onde $d$ é o número de parâmetros a estimar, e $x_i$ são
 
 - A estimação do Método de Momentos (MME) consiste em encontrar a solução para:
 
-$$\begin{cases} \alpha/\lambda &= \bar{x}_n \\ \alpha/\lambda^2 &= m_2 = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x}_n)  \end{cases} \quad \Longleftrightarrow \quad \begin{cases} \alpha &= (\bar{x}_n)^2 / m_2 \\ \lambda &= \bar{x}_n/m_2 \end{cases}$$
+$$\begin{cases} \alpha/\lambda &= \bar{x}_n \\ \alpha/\lambda^2 &= m_2 = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x}_n)^2  \end{cases} \quad \Longleftrightarrow \quad \begin{cases} \alpha &= (\bar{x}_n)^2 / m_2 \\ \lambda &= \bar{x}_n/m_2 \end{cases}$$
 
 - Normalmente não há forma fechada para esses estimadores e é preciso estimar numericamente.
 
@@ -341,7 +341,7 @@ qqcomp(list(fgam, fpar, fmixgampar), xlog=TRUE, ylog=TRUE, main="QQ-plot Dados d
 
 - Podemos usar testes estatísticos para complementar a nossa verificação da qualidade do ajuste.
 
-- Para <span class="red3">**distribuições contínuas**</span>, podemos usar as distâncias mencionadas na Seção 2.2.4 entre asfunções de distribuição empírica e teórica.
+- Para <span class="red3">**distribuições contínuas**</span>, podemos usar as distâncias mencionadas na Seção 2.2.4 entre as funções de distribuição empírica e teórica.
 
 - Para <span class="red3">**distribuições discretas**</span>, o teste mais comum é a **estatística qui-quadrado**:
 

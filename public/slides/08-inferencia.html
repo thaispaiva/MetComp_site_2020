@@ -326,7 +326,7 @@ fgamEMV</pre>
 <li><p>A estimação do Método de Momentos (MME) consiste em encontrar a solução para:</p></li>
 </ul>
 
-<p>\[\begin{cases} \alpha/\lambda &amp;= \bar{x}_n \\ \alpha/\lambda^2 &amp;= m_2 = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x}_n)  \end{cases} \quad \Longleftrightarrow \quad \begin{cases} \alpha &amp;= (\bar{x}_n)^2 / m_2 \\ \lambda &amp;= \bar{x}_n/m_2 \end{cases}\]</p>
+<p>\[\begin{cases} \alpha/\lambda &amp;= \bar{x}_n \\ \alpha/\lambda^2 &amp;= m_2 = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x}_n)^2  \end{cases} \quad \Longleftrightarrow \quad \begin{cases} \alpha &amp;= (\bar{x}_n)^2 / m_2 \\ \lambda &amp;= \bar{x}_n/m_2 \end{cases}\]</p>
 
 <ul>
 <li>Normalmente não há forma fechada para esses estimadores e é preciso estimar numericamente.</li>
@@ -463,7 +463,7 @@ cbind(SINGLE= c(NA, fgam$estimate, fpar$estimate), MIXTURE=fmixgampar$estimate)<
 ## scale 13.8424418 29.9966023</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo - Dados de incêndio</strong></span></h2></hgroup><article  id="exemplo---dados-de-incêndio-3" class="smaller">
+<strong>Exemplo - Dados de incêndio</strong></span></h2></hgroup><article  class="smaller" id="exemplo---dados-de-incêndio-3">
 
 <pre class = 'prettyprint lang-r'>## Gráfico das funções de distribuição ajustadas
 cdfcomp(list(fgam, fpar, fmixgampar), xlogscale=TRUE, datacol=&quot;grey&quot;, lwd=2,
@@ -505,7 +505,7 @@ qqcomp(list(fgam, fpar, fmixgampar), xlog=TRUE, ylog=TRUE, main=&quot;QQ-plot Da
 <ul>
 <li><p>Podemos usar testes estatísticos para complementar a nossa verificação da qualidade do ajuste.</p></li>
 <li><p>Para <span class="red3">
-<strong>distribuições contínuas</strong></span>, podemos usar as distâncias mencionadas na Seção 2.2.4 entre asfunções de distribuição empírica e teórica.</p></li>
+<strong>distribuições contínuas</strong></span>, podemos usar as distâncias mencionadas na Seção 2.2.4 entre as funções de distribuição empírica e teórica.</p></li>
 <li><p>Para <span class="red3">
 <strong>distribuições discretas</strong></span>, o teste mais comum é a <strong>estatística qui-quadrado</strong>:</p></li>
 </ul>
@@ -560,7 +560,7 @@ qpoisZM &lt;- function(p, prob, lambda)
                   lower=c(0,0), upper=c(1, Inf))  # poisson modificada</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo - Testes de Adequação de Ajuste</strong></span></h2></hgroup><article  id="exemplo---testes-de-adequação-de-ajuste-2" class="smaller">
+<strong>Exemplo - Testes de Adequação de Ajuste</strong></span></h2></hgroup><article  class="smaller" id="exemplo---testes-de-adequação-de-ajuste-2">
 
 <pre class = 'prettyprint lang-r'>gofstat(list(fpois, fnbinom, fpoisZM), chisqbreaks=c(0:4, 9),
         discrete=TRUE, fitnames=c(&quot;Poisson&quot;,&quot;NegBinomial&quot;,&quot;ZM-Poisson&quot;))</pre>
