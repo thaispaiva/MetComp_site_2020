@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "23 de abril de 2018"
+date: "28 de janeiro de 2021"
 subtitle: "12 - Revisão de Matemática Financeira"
 
 output:
@@ -162,14 +162,14 @@ real2Nominal(i=0.04, k=12, type="discount")
 
 - Valor do montante de 1 unidade acumulado pelo tempo $t$:
 
-$$A(t) = (1+i)^t = \left( 1 + \frac{i^{(m)}}{m} \right)^t = \left(1 - \frac{d^{(m)}}{m} \right)^{-t} = (1-d)^{-t} = v^{-t} $$
+$$A(t) = (1+i)^t = \left( 1 + \frac{i^{(m)}}{m} \right)^{t.m} = \left(1 - \frac{d^{(m)}}{m} \right)^{-t.m} = (1-d)^{-t} = v^{-t} $$
 
-onde $i$ e $d$ são as taxas de juros e desconto efetivas, e $i^{(m)})$ e $d^{(m)}$ são as taxas nominais.
+onde $i$ e $d$ são as taxas de juros e desconto efetivas, e $i^{(m)}$ e $d^{(m)}$ são as taxas nominais.
 
 
 ## <span class="green3">**Exercício 1**</span> {.build}
 
-Encontre o valor presente de $1.000 a ser pago no final de 6 anos com juros de 6% ao ano, pago antecipadamente e convertido semestralmente.
+Encontre o valor presente (hoje) de $1.000 a ser pago no final de **6 anos** com **juros de 6% ao ano**, **pago antecipadamente** e **convertido semestralmente**.
 
 ```{r echo=FALSE}
 ## Exercício 1
@@ -178,7 +178,7 @@ Encontre o valor presente de $1.000 a ser pago no final de 6 anos com juros de 6
 ```
 
 ```{r purl=FALSE, echo=FALSE}
-1000*(1-0.06/2)^12
+# 1000*(1-0.06/2)^12
 
 annualDiscount = nominal2Real(i=0.06, k=2, type="discount")
 i = discount2Interest(annualDiscount)
@@ -208,7 +208,7 @@ onde $P_j$ é o valor do pagamento e $i_j$ é a taxa de juros correspondentes ao
 - O pacote `lifecontingencies` também tem funções para calcular **Valor Presente** de fluxos de pagamentos *determinísticos*. 
 
 
-## <span class="green3">**Exercício 2:**</span>
+## <span class="green3">**Exercício 2:**</span> {.build}
 
 Usando a função `presentValue`, verifique qual investimento é melhor (com $i=5\%$):
 
@@ -217,7 +217,7 @@ Usando a função `presentValue`, verifique qual investimento é melhor (com $i=
 2) Pagar \$700 agora e receber \$1000 no final do segundo ano.
 
 
-## <span class="green3">**Exercício:**</span>
+<!-- ## <span class="green3">**Exercício:**</span> -->
 
 ```{r echo=FALSE}
 

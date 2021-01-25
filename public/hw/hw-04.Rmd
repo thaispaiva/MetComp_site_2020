@@ -1,6 +1,6 @@
 ---
 title: "Lista de Exercícios 4"
-date: "Entrega: **22/04/2018** via Moodle (até as 23:55)"
+date: "Entrega: **30/01/2021** via Moodle (até as 23:59)"
 output: 
   html_document: 
     css: hw.css
@@ -12,8 +12,8 @@ output:
 
 ## 
 
-Você irá entregar essa lista de exercício no Moodle da disciplina. Você deverá submeter o **arquivo pdf gerado automaticamente pelo R** usando *markdown*. Não serão aceitos arquivos em outro formato!
-
+Você irá entregar essa lista de exercício no Moodle da disciplina. Você deverá submeter preferencialmente o **arquivo pdf gerado automaticamente pelo R** usando *markdown*. 
+<!-- Não serão aceitos arquivos em outro formato! -->
 
 
 ## Inferência
@@ -50,14 +50,15 @@ Considere os dados de análise de crédito na Alemanha, no banco `credit` també
 7) Analise a probabilidade de $Y=1$, ou seja, classificar um cliente como mau, dado a distribuição da duração do empréstimo (variável `duration`). Para isso, siga o exemplo feito em sala para a variável idade. Sugestão: dividir a duração do empréstimo registrada em meses em intervalos de 0-6, 6-12, 12-18, 18-24, 24-36, 36+. 
 
 
-## Resolução
 
-Sugestão de respostas: 
+<!-- ## Resolução -->
 
-- [Resolução Lista 4](./resolucao/lista-04-resolucao.html)
+<!-- Sugestão de respostas:  -->
 
-- [Arquivo .Rmd](./resolucao/lista-04-resolucao.Rmd)
-                        
-- [Resolução em pdf](./resolucao/lista-04-resolucao.pdf)
+<!-- - [Resolução Lista 4](./resolucao/lista-04-resolucao.html) -->
+
+<!-- - [Arquivo .Rmd](./resolucao/lista-04-resolucao.Rmd) -->
+
+<!-- - [Resolução em pdf](./resolucao/lista-04-resolucao.pdf) -->
 
 

@@ -1,6 +1,9 @@
 ## EST171 - Métodos Computacionais para Análise de Risco
 ## Código da aula 11 - Aprendizagem Estatística
 
+
+
+
 ## Pacotes
 # install.packages("car")
 require(CASdatasets)
@@ -15,6 +18,7 @@ credit.f = credit
 credit.f$age = cut(credit.f$age,c(0,25,Inf))
 credit.f$credit_amount = cut(credit.f$credit_amount,c(0,4000,Inf))
 credit.f$duration = cut(credit.f$duration,c(0,15,36,Inf))
+
 
 ## recodificando algumas variáveis
 
@@ -40,13 +44,16 @@ credit.rcd$other_payment_plans <- recode(credit.rcd$other_payment_plans, "'A143'
 
 credit.rcd$housing <- recode(credit.rcd$housing, "'A152'='Owner';else='Else'")
 
+
 ## Separando Banco de Treinamento
 set.seed(123)
 index = sort(sample(nrow(credit), 644, replace=F))
 table(credit$class[index])
 
+
 train.db <- credit.rcd[index,]
 valid.db <- credit.rcd[-index,]
+
 
 
 ## Ajustando modelo de regressão logística com Idade e Duração
@@ -54,10 +61,12 @@ reg <- glm(class ~ age + duration, data=credit[index,], family=binomial(link="lo
 
 summary(reg)
 
+
 ## Ajustando modelo de regressão logística com Histórico
 reg <- glm(class ~ credit_history, data=credit, family=binomial(link="logit"))
 
 summary(reg)
+
 
 ## valor previsto por categoria de Histórico
 cbind( prop.table(table(credit$credit_history,credit$class),1),
@@ -65,8 +74,10 @@ cbind( prop.table(table(credit$credit_history,credit$class),1),
                      newdata=data.frame(credit_history=levels(credit$credit_history)),
                      type="response"))
 
+
 ## Ajustando modelo de regressão logística com Histórico e Motivo
 reg <- glm(class ~ credit_history*purpose,data=credit.rcd,family=binomial(link="logit"))
+
 
 ## Valores estimados por categoria
 attach(credit.rcd)
@@ -77,14 +88,18 @@ p.class = matrix( predict(reg, newdata = data.frame(
 rownames(p.class) <- levels(purpose)
 colnames(p.class) <- levels(credit_history)
 
+
 p.class
+
 
 ## Razão das chances
 p.class/(1-p.class)
 
+
 ## Seleção de Variáveis
 
 ## Forward Selection
+
 predictors <- names(credit.rcd) [-grep('class', names(credit.rcd))]
 formula <- as.formula(paste("y ~ ", paste(names(credit.rcd[,predictors]), collapse="+")))
 logit <- glm(class ~ 1, data=train.db, family=binomial)
@@ -92,7 +107,9 @@ logit <- glm(class ~ 1, data=train.db, family=binomial)
 for.sel <- step(logit,direction='forward', trace=FALSE, # mudar para trace=TRUE
                 k=log(nrow(train.db)), scope=list(upper=formula))
 
+
 ## Backward Selection
+
 
 logit <- glm(class ~ ., data=train.db[,c("class",predictors)], family=binomial)
 
