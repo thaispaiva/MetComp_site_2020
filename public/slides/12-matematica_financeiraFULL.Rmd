@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "23 de abril de 2018"
+date: "28 de janeiro de 2021"
 subtitle: "12 - Revisão de Matemática Financeira"
 
 output:
@@ -162,7 +162,7 @@ real2Nominal(i=0.04, k=12, type="discount")
 
 - Valor do montante de 1 unidade acumulado pelo tempo $t$:
 
-$$A(t) = (1+i)^t = \left( 1 + \frac{i^{(m)}}{m} \right)^t = \left(1 - \frac{d^{(m)}}{m} \right)^{-t} = (1-d)^{-t} = v^{-t} $$
+$$A(t) = (1+i)^t = \left( 1 + \frac{i^{(m)}}{m} \right)^{t.m} = \left(1 - \frac{d^{(m)}}{m} \right)^{-t.m} = (1-d)^{-t} = v^{-t} $$
 
 onde $i$ e $d$ são as taxas de juros e desconto efetivas, e $i^{(m)})$ e $d^{(m)}$ são as taxas nominais.
 

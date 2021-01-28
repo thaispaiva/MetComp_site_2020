@@ -4,7 +4,6 @@
   <title>Métodos Computacionais para Análise de Risco</title>
 
   <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="generator" content="pandoc" />
 
@@ -64,6 +63,10 @@
       font-style: italic;
     }
 
+    summary {
+      display: list-item;
+    }
+
     slides > slide {
       -webkit-transition: all 0.4s ease-in-out;
       -moz-transition: all 0.4s ease-in-out;
@@ -79,7 +82,81 @@
       transition: opacity 0.6s ease-in 0.4s;
       opacity: 0;
     }
+/* https://github.com/ropensci/plotly/pull/524#issuecomment-468142578 */
+slide:not(.current) .plotly.html-widget{
+  display: block;
+}
 
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+            code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode { white-space: pre; position: relative; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    code.sourceCode { white-space: pre-wrap; }
+    code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+        
     slides > slide:not(.nobackground):before {
       font-size: 12pt;
       content: "";
@@ -112,7 +189,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">23 de abril de 2018</p>
+            <p style="margin-top: 6px; margin-left: -2px;">28 de janeiro de 2021</p>
           </hgroup>
   </slide>
 
@@ -128,7 +205,7 @@
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Matemática Financeira</h2></hgroup><article  id="matematica-financeira">
+</article></slide><slide class=""><hgroup><h2>Matemática Financeira</h2></hgroup><article  id="matemática-financeira">
 
 <ul>
 <li><p>A <span class="black">
@@ -240,18 +317,18 @@ real2Nominal(i=0.04, k=12, type=&quot;discount&quot;) </pre>
 
 <pre >## [1] 0.04075264</pre>
 
-</article></slide><slide class=""><hgroup><h2>Relações úteis</h2></hgroup><article  id="relacoes-uteis">
+</article></slide><slide class=""><hgroup><h2>Relações úteis</h2></hgroup><article  id="relações-úteis">
 
 <ul>
 <li>Valor do montante de 1 unidade acumulado pelo tempo \(t\):</li>
 </ul>
 
-<p>\[A(t) = (1+i)^t = \left( 1 + \frac{i^{(m)}}{m} \right)^t = \left(1 - \frac{d^{(m)}}{m} \right)^{-t} = (1-d)^{-t} = v^{-t} \]</p>
+<p>\[A(t) = (1+i)^t = \left( 1 + \frac{i^{(m)}}{m} \right)^{t.m} = \left(1 - \frac{d^{(m)}}{m} \right)^{-t.m} = (1-d)^{-t} = v^{-t} \]</p>
 
 <p>onde \(i\) e \(d\) são as taxas de juros e desconto efetivas, e \(i^{(m)})\) e \(d^{(m)}\) são as taxas nominais.</p>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 1</strong></span></h2></hgroup><article  id="exercicio-1" class="build">
+<strong>Exercício 1</strong></span></h2></hgroup><article  id="exercício-1" class="build">
 
 <p>Encontre o valor presente de $1.000 a ser pago no final de 6 anos com juros de 6% ao ano, pago antecipadamente e convertido semestralmente.</p>
 
@@ -287,7 +364,7 @@ presentValue(cashFlows=1000, timeIds=6, interestRates=i, probabilities=1)</pre>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 2:</strong></span></h2></hgroup><article  id="exercicio-2">
+<strong>Exercício 2:</strong></span></h2></hgroup><article  id="exercício-2">
 
 <p>Usando a função <code>presentValue</code>, verifique qual investimento é melhor (com \(i=5\%\)):</p>
 
@@ -297,7 +374,7 @@ presentValue(cashFlows=1000, timeIds=6, interestRates=i, probabilities=1)</pre>
 </ol>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício:</strong></span></h2></hgroup><article  id="exercicio">
+<strong>Exercício:</strong></span></h2></hgroup><article  id="exercício">
 
 <pre class = 'prettyprint lang-r'>pg1 = c(-500,100,200,300,250)
 t1 = 0:4
@@ -332,7 +409,7 @@ anuidades antecipadas</span> (&ldquo;<em>annuity-due</em>&rdquo;).</p></li>
 <li>Anuidade certa postecipada por \(n\) anos:</li>
 </ul>
 
-<p><img src="img/anuidade.png" height="5%" style="display: block; margin: auto;" /></p>
+<p><img src="img/anuidade.PNG" height="5%" style="display: block; margin: auto;" /></p>
 
 <ul>
 <li>Anuidade certa antecipada por \(n\) anos:</li>
@@ -353,7 +430,7 @@ anuidades antecipadas</span> (&ldquo;<em>annuity-due</em>&rdquo;).</p></li>
 <p>Podemos calcular com a função <code>annuity</code>.</p>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 3:</strong></span></h2></hgroup><article  id="exercicio-3">
+<strong>Exercício 3:</strong></span></h2></hgroup><article  id="exercício-3">
 
 <ol>
 <li><p>Encontre o valor presente de uma anuidade postecipada de $100 paga anualmente por 5 anos, com juros de 9%. <br><br></p></li>
@@ -362,7 +439,7 @@ anuidades antecipadas</span> (&ldquo;<em>annuity-due</em>&rdquo;).</p></li>
 </ol>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício:</strong></span></h2></hgroup><article  id="exercicio-4">
+<strong>Exercício:</strong></span></h2></hgroup><article  id="exercício-4">
 
 <pre class = 'prettyprint lang-r'>i = 0.09
 n = 5
@@ -375,7 +452,7 @@ n = 5
 <pre >## [1] 388.9651</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício:</strong></span></h2></hgroup><article  id="exercicio-5">
+<strong>Exercício:</strong></span></h2></hgroup><article  id="exercício-5">
 
 <pre class = 'prettyprint lang-r'>i = 0.06
 10*1/i</pre>
@@ -387,7 +464,7 @@ n = 5
 <pre >## [1] 166.6667</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício:</strong></span></h2></hgroup><article  id="exercicio-6">
+<strong>Exercício:</strong></span></h2></hgroup><article  id="exercício-6">
 
 <pre class = 'prettyprint lang-r'>i = 0.06
 n = 5
@@ -411,7 +488,7 @@ n = 5
 <p>Podemos calcular com a função <code>accumulatedValue</code>.</p>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 4:</strong></span></h2></hgroup><article  id="exercicio-4-1" class="build">
+<strong>Exercício 4:</strong></span></h2></hgroup><article  id="exercício-4-1" class="build">
 
 <ol>
 <li>Qual será o valor acumulado se depositarmos $5000 no começo de cada ano pelos próximos 5 anos? Considere juros compostos de 6%.</li>
@@ -426,7 +503,7 @@ n = 5
 <pre >## [1] 29876.59</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 5:</strong></span></h2></hgroup><article  id="exercicio-5-1" class="build">
+<strong>Exercício 5:</strong></span></h2></hgroup><article  id="exercício-5-1" class="build">
 
 <p>Um homem quer economizar $100.000 para pagar a faculdade de seu filho daqui a 10 anos. Um fundo de educação exige que o investidor faça depósitos fixos no final de cada ano, com uma taxa de juros garantida de 5%. Quanto o homem precisa depositar a cada ano para atingir sua meta?</p>
 
@@ -448,7 +525,7 @@ R</pre>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 6:</strong></span></h2></hgroup><article  id="exercicio-6-1">
+<strong>Exercício 6:</strong></span></h2></hgroup><article  id="exercício-6-1">
 
 <ul>
 <li><p>Os seguintes pagamentos serão recebidos:</p>
@@ -461,7 +538,7 @@ R</pre>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 6:</strong></span></h2></hgroup><article  id="exercicio-6-2">
+<strong>Exercício 6:</strong></span></h2></hgroup><article  id="exercício-6-2">
 
 <p>Podemos considerar uma anuidade fixa de $480 mais uma anuidade crescente de $20:</p>
 
@@ -483,7 +560,7 @@ R</pre>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 7:</strong></span></h2></hgroup><article  id="exercicio-7">
+<strong>Exercício 7:</strong></span></h2></hgroup><article  id="exercício-7">
 
 <ul>
 <li>Encontre o valor presente de uma anuidade antecipada que paga $1200 anualmente por 12 anos, com o primeiro pagamento daqui a dois anos. Considere i=6%.</li>

@@ -292,8 +292,9 @@ b) Suponha que uma empresa emita um contrato de dividendo de ações que paga $1
 c) Qual o valor que você deve investir hoje, com juros compostos anuais de 6%, para sacar $5000 no começo de cada ano nos próximos 5 anos?
 
 
-## <span class="green3">**Exercício:**</span>
+## <span class="green3">**Exercício 3:**</span>
 
+1 . 
 ```{r echo=FALSE}
 
 ## Exercício 3
@@ -306,28 +307,26 @@ i = 0.09
 n = 5
 100*(1-(1+i)^(-n))/i
 
-100*annuity(i=0.09, n=5, type="immediate")
+# 100*annuity(i=0.09, n=5, type="immediate")
 ```
 
-
-## <span class="green3">**Exercício:**</span>
-
+<!-- ## <span class="green3">**Exercício:**</span> -->
+2 .
 ```{r purl=FALSE, echo=FALSE}
 i = 0.06
 10*1/i
 
-10*annuity(i=0.06, n=Inf)
+# 10*annuity(i=0.06, n=Inf)
 ```
 
-
-## <span class="green3">**Exercício:**</span>
-
+<!-- ## <span class="green3">**Exercício:**</span> -->
+3 .
 ```{r purl=FALSE, echo=FALSE}
 i = 0.06
 n = 5
 5000*(1+i)*(1-(1+i)^(-n))/i
 
-5000*annuity(i=0.06, n=5, type="due")
+# 5000*annuity(i=0.06, n=5, type="due")
 ```
 
 
@@ -354,7 +353,7 @@ Podemos calcular com a função `accumulatedValue`.
 ```
 
 ```{r purl=FALSE, echo=FALSE}
-annuity(i=0.06, n=5, type="due")*5000*1.06^5
+# annuity(i=0.06, n=5, type="due")*5000*1.06^5
 5000*accumulatedValue(i=0.06, n=5,type="due")
 ```
 
@@ -440,7 +439,7 @@ Valor acumulado:
 ```
 
 ```{r purl=FALSE, echo=FALSE}
-1200*annuity(i=0.06,n=12,m=1,type="immediate")
+# 1200*annuity(i=0.06,n=12,m=1,type="immediate")
 
 1200*annuity(i=0.06,n=12,m=2,type="due")
 ```
