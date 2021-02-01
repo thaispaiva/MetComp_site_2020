@@ -40,7 +40,7 @@ file_name = "13-tabelas"
 
 ## Aula de Hoje
 
-- Fluxos de pagamentos determinísticos
+- Fluxos de pagamentos probabilísticos
 
 - Tabela de Vida
 
@@ -156,7 +156,7 @@ plot(tab1)
 
 - Podemos criar uma **tabela de vida** no R usando o pacote `lifecontingencies` de algumas maneiras diferentes:
 
-2. a partir das probabilidades $p_x$ ou $q_x$:
+2 . a partir das probabilidades $p_x$ ou $q_x$:
   
 ```{r echo=FALSE, message=FALSE}
 ## Exercício 2
@@ -392,7 +392,7 @@ Vamos relembrar as suposições sobre a mortalidade em idades fracionárias:
 - <span class="black">Distribuição uniforme</span> ou <span class="black">interpolação linear</span>:
 
 
-Seja $h \geq 0 $ o tempo fracionário, e $\lfloor h \rfloor$ sua a parte inteira. A interpolação linear entre ${}_{\lfloor h \rfloor}p_x$ e ${}_{\lfloor h \rfloor +1}p_x$ é dada por:
+Seja $h \geq 0$ o tempo fracionário, e $\lfloor h \rfloor$ sua a parte inteira. A interpolação linear entre ${}_{\lfloor h \rfloor}p_x$ e ${}_{\lfloor h \rfloor +1}p_x$ é dada por:
   
   $${}_{h}\tilde{p}_x = \left( 1 - h + \lfloor h \rfloor \right).\,{}_{\lfloor h \rfloor}p_x + \left( h - \lfloor h \rfloor \right).\,{}_{\lfloor h \rfloor +1}p_x $$
 

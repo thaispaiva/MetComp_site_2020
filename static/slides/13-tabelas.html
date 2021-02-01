@@ -196,7 +196,7 @@ slide:not(.current) .plotly.html-widget{
 <slide class=""><hgroup><h2>Aula de Hoje</h2></hgroup><article  id="aula-de-hoje">
 
 <ul>
-<li><p>Fluxos de pagamentos determinísticos</p></li>
+<li><p>Fluxos de pagamentos probabilísticos</p></li>
 <li><p>Tabela de Vida</p>
 
 <ul>
@@ -297,9 +297,7 @@ tabela de vida</span> é uma sequência não-crescente de \(l_x\), para as idade
 <li>Podemos criar uma <strong>tabela de vida</strong> no R usando o pacote <code>lifecontingencies</code> de algumas maneiras diferentes:</li>
 </ul>
 
-<ol>
-<li>a partir das probabilidades \(p_x\) ou \(q_x\):</li>
-</ol>
+<p>2 . a partir das probabilidades \(p_x\) ou \(q_x\):</p>
 
 <pre class = 'prettyprint lang-r'>tab2 = probs2lifetable(probs=seq(from=0.1,to=1,by=0.1),
                        radix=100000,type=&quot;qx&quot;,name=&quot;Sample life table 2&quot;)</pre>
@@ -368,7 +366,7 @@ data(&quot;soa08&quot;)</pre>
 <pre >## [1] 100000.00  97957.83  97826.26  97706.55  97596.74  97495.03</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 3</strong></span></h2></hgroup><article  id="exercício-3-2" class="build">
+<strong>Exercício 3</strong></span></h2></hgroup><article  class="build" id="exercício-3-2">
 
 <p>Vamos calcular:</p>
 
@@ -386,7 +384,7 @@ data(&quot;soa08&quot;)</pre>
 <pre >## [1] 0.6869847</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 3</strong></span></h2></hgroup><article  id="exercício-3-3" class="build">
+<strong>Exercício 3</strong></span></h2></hgroup><article  class="build" id="exercício-3-3">
 
 <p>Vamos calcular:</p>
 
@@ -414,7 +412,7 @@ data(&quot;soa08&quot;)</pre>
 <p><img src="img/exn.png" style="display: block; margin: auto;" /></p>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 4</strong></span></h2></hgroup><article  id="exercício-4" class="build">
+<strong>Exercício 4</strong></span></h2></hgroup><article  class="build" id="exercício-4">
 
 <p>Usando a Tabela Ilustrativa do SOA, calcule:</p>
 
@@ -424,7 +422,7 @@ data(&quot;soa08&quot;)</pre>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 4</strong></span></h2></hgroup><article  id="exercício-4-1" class="build">
+<strong>Exercício 4</strong></span></h2></hgroup><article  class="build" id="exercício-4-1">
 
 <ul>
 <li>Para a esperança de vida em anos completos ao nascer, só precisamos somar todos os \({}_{t}p_0\)’s. Isso é equivalente a somar todos os valores de \(l_x\), exceto o primeiro, e dividir por \(l_0\).</li>
@@ -443,7 +441,7 @@ data(&quot;soa08&quot;)</pre>
 <pre >## [1] 71.30789</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 4</strong></span></h2></hgroup><article  id="exercício-4-2" class="build">
+<strong>Exercício 4</strong></span></h2></hgroup><article  class="build" id="exercício-4-2">
 
 <ul>
 <li>Para a esperança de vida em anos completos entre as idades 50 e 60, também podemos somar os valores de \(l_x\):</li>
@@ -472,7 +470,7 @@ data(&quot;soa08&quot;)</pre>
 <p><img src="img/e0xn.png" style="display: block; margin: auto;" /></p>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 5</strong></span></h2></hgroup><article  id="exercício-5" class="build">
+<strong>Exercício 5</strong></span></h2></hgroup><article  class="build" id="exercício-5">
 
 <ul>
 <li>Calcule a esperança completa de vida entre as idades 80 e 90.</li>
@@ -486,7 +484,7 @@ data(&quot;soa08&quot;)</pre>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 5</strong></span></h2></hgroup><article  id="exercício-5-1" class="build">
+<strong>Exercício 5</strong></span></h2></hgroup><article  class="build" id="exercício-5-1">
 
 <p>\[\frac 1 2 \cdot \left( \frac{l_{81}+l_{82}+\dots+l_{90}}{l_{80}} + \frac{l_{80}+l_{81}+\dots+l_{89}}{l_{80}} \right)\]</p>
 
@@ -511,7 +509,7 @@ Distribuição uniforme</span> ou <span class="black">
 interpolação linear</span>:</li>
 </ul>
 
-<p>Seja $h 0 $ o tempo fracionário, e \(\lfloor h \rfloor\) sua a parte inteira. A interpolação linear entre \({}_{\lfloor h \rfloor}p_x\) e \({}_{\lfloor h \rfloor +1}p_x\) é dada por:</p>
+<p>Seja \(h \geq 0\) o tempo fracionário, e \(\lfloor h \rfloor\) sua a parte inteira. A interpolação linear entre \({}_{\lfloor h \rfloor}p_x\) e \({}_{\lfloor h \rfloor +1}p_x\) é dada por:</p>
 
 <p>\[{}_{h}\tilde{p}_x = \left( 1 - h + \lfloor h \rfloor \right).\,{}_{\lfloor h \rfloor}p_x + \left( h - \lfloor h \rfloor \right).\,{}_{\lfloor h \rfloor +1}p_x \]</p>
 
@@ -525,7 +523,7 @@ Força de mortalidade constante</span>: <br><br> Sabemos que \({}_{h}p_x = \exp\
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício 6</strong></span></h2></hgroup><article  id="exercício-6" class="build">
+<strong>Exercício 6</strong></span></h2></hgroup><article  class="build" id="exercício-6">
 
 <ul>
 <li><p>Avalie a probabilidade de uma vida de idade 80 1/4 morrer no próximo semestre, assumindo:</p>
