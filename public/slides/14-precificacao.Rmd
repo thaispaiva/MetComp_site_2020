@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "02 de maio de 2018"
+date: "04 de fevereiro de 2021"
 subtitle: "14 - Precificação de Seguros"
 
 output:
@@ -430,7 +430,7 @@ with(soaAct.df, (Nx[66]/Dx[66]))
 ```
 
 ```{r}
-## 3) usando funções de comutação
+## 3) usando função do pacote
 axn(actuarialtable=soaAct,x=65)
 
 ```
@@ -474,7 +474,7 @@ axn(actuarialtable=soaAct,x=65)
 
 ```
 
-(Para anuidade postecipada: `type="arrears"`)
+(Para anuidade postecipada: `payment="arrears"`)
 
 
 # Prêmios
@@ -499,7 +499,7 @@ $$VPA(\mbox{benefícios}) = VPA(\mbox{prêmios}) $$
 
 - VPA benefícios:
 
-$$A_{25} $$
+$$100.000 \times A_{25} $$
 
 - VPA prêmios:
 
