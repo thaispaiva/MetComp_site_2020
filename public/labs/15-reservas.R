@@ -1,6 +1,9 @@
 ## EST171 - Métodos Computacionais para Análise de Risco
 ## Código da aula 15 - Reservas
 
+
+
+
 require(lifecontingencies)
 
 ## carregar tabela atuarial
@@ -10,10 +13,14 @@ data("soa08Act")
 ## Exemplo 1 - reserva para seguro de vida inteira
 
 ## prêmio
-## 
+(P = Axn(soa08Act,60)/axn(soa08Act,60))
 
 ## reserva t=10
-##
+(V = Axn(soa08Act,60+10)-P*axn(soa08Act,60+10))
+
+
+
+
 
 
 ## Exemplo 2 - reserva para seguro de vida temporário
@@ -25,6 +32,13 @@ data("soa08Act")
 ##
 
 
+
+
+
+
+
+
+
 ## Gráfico da reserva com tempo
 
 ## 1) Crie uma função V para avaliar a reserva no tempo t
@@ -33,6 +47,9 @@ data("soa08Act")
 ## Dica: usar a função 'Vectorize'
 
 ## 3) Faça o gráfico
+
+
+
 
 
 ## Exemplo 3 - reserva para seguro temporario com duração diferente para prêmios
@@ -47,13 +64,17 @@ data("soa08Act")
 ##
 
 
+
+
+
 ## Exemplo 4 - reserva para seguro dotal misto
 
+
 ## prêmio
-##
+(P = AExn(soa08Act, 60,20)/axn(soa08Act, 60,20))
 
 ## reserva t=10
-##
+( V = AExn(soa08Act, 60+10,20-10)-P*axn(soa08Act, 60+10,20-10) )
 
 
 ## Exemplo 5 - reserva para anuidade vitalícia diferida
@@ -68,13 +89,22 @@ data("soa08Act")
 ##
 
 
+
+
+
 ## Fórmula recursiva
+
 
 ## função para encontrar solução para fórmula recursiva
 recurrent = function(a,b,ufinal){
   s <- rev(cumprod(c(1, b)))
   return( ( rev(cumsum(s[-1]*rev(a))) + s[1]*ufinal )/rev(s[-1]) )
 }
+
+
+
+
+
 
 ## Exemplo - seguro temporário
 ## encontrando a reserva usando a fórmula recursiva
@@ -88,6 +118,7 @@ Vectb = Vectorize(function(t) pxt(soa08Act,t,1))(60+0:29)/1.06
 
 ## Sequência da reserva com a fórmula recursiva
 Vectv = c(recurrent(a=Vecta,b=Vectb,ufinal=0),0)
+
 
 ## gráfico das reservas
 plot(0:30, Vectv, type="b", pch=20, main="Reserva de seguro temporário por 30 anos")

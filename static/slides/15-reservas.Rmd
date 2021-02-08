@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "07 de maio de 2018"
+date: "09 de fevereiro de 2021"
 subtitle: "15 - Reservas"
 
 output:
@@ -62,7 +62,7 @@ file_name = "15-reservas"
 
 Reservas podem ser calculadas através de dois métodos:
 
-- <span class="black">**Prospectivo:**</span> a reserva é calculada como a diferença entre os valores presentes atuarias dos benefícios futuros e dos prêmios futuros.
+- <span class="black">**Prospectivo:**</span> a reserva é calculada como a diferença entre os valores presentes atuariais dos benefícios futuros e dos prêmios futuros.
 
 $${}_{t}V = VPA(\mbox{benefícios futuros}) - VPA(\mbox{prêmios futuros}) $$
 
@@ -93,22 +93,14 @@ data("soa08Act")
 
 
 ## Exemplo 1 - reserva para seguro de vida inteira
-
-## prêmio
-## 
-
-## reserva t=10
-##
-
 ```
 
-```{r purl=FALSE}
+```{r purl=TRUE}
 ## prêmio
-P = Axn(soa08Act,60)/axn(soa08Act,60)
-
+(P = Axn(soa08Act,60)/axn(soa08Act,60))
 ```
 
-```{r purl=FALSE}
+```{r purl=TRUE}
 ## reserva t=10
 (V = Axn(soa08Act,60+10)-P*axn(soa08Act,60+10))
 ```
@@ -239,17 +231,11 @@ P = Axn(soa08Act,x=25,n=40)/axn(soa08Act,x=25,n=5)
 
 ## Exemplo 4 - reserva para seguro dotal misto
 
-## prêmio
-##
-
-## reserva t=10
-##
-
 ```
 
-```{r echo=FALSE, purl=FALSE}
+```{r echo=TRUE, purl=TRUE}
 ## prêmio
-P = AExn(soa08Act, 60,20)/axn(soa08Act, 60,20)
+(P = AExn(soa08Act, 60,20)/axn(soa08Act, 60,20))
 
 ## reserva t=10
 ( V = AExn(soa08Act, 60+10,20-10)-P*axn(soa08Act, 60+10,20-10) )

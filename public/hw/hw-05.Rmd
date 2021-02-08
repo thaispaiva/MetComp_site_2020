@@ -1,6 +1,6 @@
 ---
 title: "Lista de Exercícios 5"
-date: "Entrega: **13/05/2018** via Moodle (até as 23:55)"
+date: "Entrega: **18/02/2021** via Moodle (até as 23:59)"
 output: 
   html_document: 
     css: hw.css
@@ -12,7 +12,8 @@ output:
 
 ## 
 
-Você irá entregar essa lista de exercício no Moodle da disciplina. Você deverá submeter o **arquivo pdf gerado automaticamente pelo R** usando *markdown*. Não serão aceitos arquivos em outro formato!
+Você irá entregar essa lista de exercício no Moodle da disciplina. Você deverá submeter preferencialmente o **arquivo pdf gerado automaticamente pelo R** usando *markdown*. 
+<!-- Não serão aceitos arquivos em outro formato! -->
 
 
 
@@ -61,7 +62,7 @@ Para os exercícios a seguir, utilize a mesma tabela de vida da seção anterior
 13) Calcule o prêmio mensal pago durante 15 anos para um segurado de 30 anos que deseja contratar um seguro temporário por 35 anos, com indenização de \$100.000 paga no final do mês de morte. Assuma uma taxa de juros de 3%.
 
 
-## Resolução
+<!-- ## Resolução -->
 
-Sugestão de respostas: [Resolução Lista 5](./resolucao/lista-05-resolucao.html)
+<!-- Sugestão de respostas: [Resolução Lista 5](./resolucao/lista-05-resolucao.html) -->
 
