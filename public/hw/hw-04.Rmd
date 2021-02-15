@@ -51,14 +51,14 @@ Considere os dados de análise de crédito na Alemanha, no banco `credit` també
 
 
 
-<!-- ## Resolução -->
+## Resolução
 
-<!-- Sugestão de respostas:  -->
+Sugestão de respostas:
 
-<!-- - [Resolução Lista 4](./resolucao/lista-04-resolucao.html) -->
+- [Resolução Lista 4](./resolucao/lista-04-resolucao.html)
 
-<!-- - [Arquivo .Rmd](./resolucao/lista-04-resolucao.Rmd) -->
+- [Arquivo .Rmd](./resolucao/lista-04-resolucao.Rmd)
 
-<!-- - [Resolução em pdf](./resolucao/lista-04-resolucao.pdf) -->
+- [Resolução em pdf](./resolucao/lista-04-resolucao.pdf)
 
 
