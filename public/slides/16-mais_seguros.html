@@ -4,7 +4,6 @@
   <title>Métodos Computacionais para Análise de Risco</title>
 
   <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="generator" content="pandoc" />
 
@@ -64,6 +63,10 @@
       font-style: italic;
     }
 
+    summary {
+      display: list-item;
+    }
+
     slides > slide {
       -webkit-transition: all 0.4s ease-in-out;
       -moz-transition: all 0.4s ease-in-out;
@@ -79,7 +82,81 @@
       transition: opacity 0.6s ease-in 0.4s;
       opacity: 0;
     }
+/* https://github.com/ropensci/plotly/pull/524#issuecomment-468142578 */
+slide:not(.current) .plotly.html-widget{
+  display: block;
+}
 
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+            code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode { white-space: pre; position: relative; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    code.sourceCode { white-space: pre-wrap; }
+    code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+        
     slides > slide:not(.nobackground):before {
       font-size: 12pt;
       content: "";
@@ -112,7 +189,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">14 de maio de 2018</p>
+            <p style="margin-top: 6px; margin-left: -2px;">18 de fevereiro de 2021</p>
           </hgroup>
   </slide>
 
@@ -134,9 +211,9 @@
 </ul></li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Múltiplas Vidas</h2></hgroup><article  id="multiplas-vidas">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Múltiplas Vidas</h2></hgroup><article  id="múltiplas-vidas">
 
-</article></slide><slide class=""><hgroup><h2>Seguros para Múltiplas Vidas</h2></hgroup><article  id="seguros-para-multiplas-vidas">
+</article></slide><slide class=""><hgroup><h2>Seguros para Múltiplas Vidas</h2></hgroup><article  id="seguros-para-múltiplas-vidas">
 
 <ul>
 <li><p>A teoria geral que vimos até agora para seguros, anuidades, prêmios e reservas pode ser extendida para considerar apólices para <strong>múltiplas vidas</strong>.</p></li>
@@ -150,7 +227,7 @@
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo" class="build">
+<strong>Exemplo 1</strong></span></h2></hgroup><article  class="build" id="exemplo-1">
 
 <ul>
 <li><p>Considere duas vidas independentes com idades 60 e 70.</p></li>
@@ -158,7 +235,7 @@
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-1" class="build">
+<strong>Exemplo</strong></span></h2></hgroup><article  class="build" id="exemplo">
 
 <pre class = 'prettyprint lang-r'>tab.xy = list(soa08Act,soa08Act)
 
@@ -173,14 +250,14 @@ Axn(soa08Act,60) + Axn(soa08Act,70) - Axyzn(tab.xy,x=c(60,70))</pre>
 <pre >## [1] 0.3117959</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-2" class="build">
+<strong>Exemplo 2</strong></span></h2></hgroup><article  class="build" id="exemplo-2">
 
 <ul>
 <li><p>E se a indenização do seguro for paga no final do ano da <em>primeira morte</em>? O VPA será maior ou menor? <br><br></p></li>
 <li><p>Verifique se a igualdade \(A_{xy} + A_{\overline{xy}} = A_x + A_y\) é verdadeira.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Anuidades Reversíveis</h2></hgroup><article  id="anuidades-reversiveis" class="build">
+</article></slide><slide class=""><hgroup><h2>Anuidades Reversíveis</h2></hgroup><article  class="build" id="anuidades-reversíveis">
 
 <ul>
 <li><p>A teoria de múltiplas vidas é utilizada para avaliar <strong>anuidades reversíveis</strong>, um tipo especial de anuidades para duas vidas.</p></li>
@@ -192,11 +269,13 @@ Axn(soa08Act,60) + Axn(soa08Act,70) - Axyzn(tab.xy,x=c(60,70))</pre>
  \[\ddot{a}_{x|y} = \ddot{a}_y - \ddot{a}_{xy}\] </span></p>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-3" class="build">
+<strong>Exemplo 3</strong></span></h2></hgroup><article  class="build" id="exemplo-3">
 
 <ul>
 <li>Calcule o VPA de uma anuidade reversível vitalícia para um segurado de 60 anos, que começa a ser paga após a morte de um indivíduo de 70 anos.</li>
 </ul>
+
+<pre class = 'prettyprint lang-r'>axn(soa08Act,60) - axyzn(tab.xy,c(60,70))</pre>
 
 <pre >## [1] 3.589022</pre>
 
@@ -214,7 +293,7 @@ Axn(soa08Act,60) + Axn(soa08Act,70) - Axyzn(tab.xy,x=c(60,70))</pre>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-4">
+<strong>Exercício 1</strong></span></h2></hgroup><article  id="exercício-1">
 
 <ul>
 <li><p>Para um seguro de vida inteira discreto com soma segurada de $100.000 para uma vida de 35 anos, considere:</p>
@@ -228,8 +307,11 @@ Axn(soa08Act,60) + Axn(soa08Act,70) - Axyzn(tab.xy,x=c(60,70))</pre>
 <li><p>Encontre o prêmio bruto \(G\).</p></li>
 </ul>
 
+<p><span style="font-size: 20px;">
+ \[ G. \ddot{a}_{35} = 100.000 \times A_{35} + \left( 0,1.G + 25 + 2,5 . \frac{100.000}{1.000} \right) \times \ddot{a}_{35}\] </span></p>
+
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-5">
+<strong>Exercício 2</strong></span></h2></hgroup><article  id="exercício-2">
 
 <ul>
 <li><p>Para um seguro de vida inteira de $1.000 para um segurado de 45 anos, considere:</p>
@@ -249,9 +331,9 @@ Axn(soa08Act,60) + Axn(soa08Act,70) - Axyzn(tab.xy,x=c(60,70))</pre>
 </ol></li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Simulação de tempos de vida</h2></hgroup><article  id="simulacao-de-tempos-de-vida">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Simulação de tempos de vida</h2></hgroup><article  id="simulação-de-tempos-de-vida">
 
-</article></slide><slide class=""><hgroup><h2>Simulação de tempos de vida</h2></hgroup><article  id="simulacao-de-tempos-de-vida-1">
+</article></slide><slide class=""><hgroup><h2>Simulação de tempos de vida</h2></hgroup><article  id="simulação-de-tempos-de-vida-1">
 
 <ul>
 <li><p>O valor presente de contratos de seguro e anuidades (<em>life-contingencies</em>) são <span class="red3">
@@ -260,7 +342,7 @@ variáveis aleatórias</span>.</p></li>
 <li><p>Podemos usar amostras de \(T(x)\) e \(K(x)\) para avaliar funções mais complexas dessas variáveis através de <a href='https://pt.wikipedia.org/wiki/M%C3%A9todo_de_Monte_Carlo' title=''>Métodos de Monte Carlo</a>.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Simulação de tempos de vida</h2></hgroup><article  id="simulacao-de-tempos-de-vida-2">
+</article></slide><slide class=""><hgroup><h2>Simulação de tempos de vida</h2></hgroup><article  id="simulação-de-tempos-de-vida-2">
 
 <ul>
 <li>Vamos gerar uma amostra de \(n=1000\) tempos de vida para indivíduos nascendo hoje, e que terão distribuição de mortalidade de acordo com a tabela SOA.</li>
@@ -270,7 +352,7 @@ variáveis aleatórias</span>.</p></li>
 set.seed(123)
 K0 = rLife(n=1000, object=soa08Act, x=0, type=&quot;Kx&quot;)</pre>
 
-</article></slide><slide class=""><hgroup><h2>Simulação de tempos de vida</h2></hgroup><article  id="simulacao-de-tempos-de-vida-3" class="build">
+</article></slide><slide class=""><hgroup><h2>Simulação de tempos de vida</h2></hgroup><article  class="build" id="simulação-de-tempos-de-vida-3">
 
 <ul>
 <li>Como está distribuída essa variável aleatória?</li>
@@ -278,7 +360,7 @@ K0 = rLife(n=1000, object=soa08Act, x=0, type=&quot;Kx&quot;)</pre>
 
 <p><img src="16-mais_seguros_files/figure-html/unnamed-chunk-13-1.png" width="720" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class=""><hgroup><h2>Simulação de tempos de vida</h2></hgroup><article  id="simulacao-de-tempos-de-vida-4" class="build">
+</article></slide><slide class=""><hgroup><h2>Simulação de tempos de vida</h2></hgroup><article  class="build" id="simulação-de-tempos-de-vida-4">
 
 <ul>
 <li>Como está distribuída essa variável aleatória?</li>
@@ -297,7 +379,7 @@ exn(soa08Act)
 t.test(x=K0, mu=exn(soa08Act))</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exercício</strong></span></h2></hgroup><article  id="exercicio">
+<strong>Exercício 3</strong></span></h2></hgroup><article  id="exercício-3">
 
 <ul>
 <li><p>Gere uma nova amostra de K0 alterando a semente. Repita os resultados do slide anterior. O que mudou?</p></li>
@@ -305,7 +387,7 @@ t.test(x=K0, mu=exn(soa08Act))</pre>
 <li><p>E se selecionarmos <code>type=&quot;Tx&quot;</code>?</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Simulação de tempos de vida</h2></hgroup><article  id="simulacao-de-tempos-de-vida-5">
+</article></slide><slide class=""><hgroup><h2>Simulação de tempos de vida</h2></hgroup><article  id="simulação-de-tempos-de-vida-5">
 
 <ul>
 <li><p>Gerar uma amostra de tempos de vida pode ser usado para computar quantias que dependem de \(T(x)\) e \(K(x)\).</p></li>
@@ -313,20 +395,20 @@ t.test(x=K0, mu=exn(soa08Act))</pre>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-6" class="build">
+<strong>Exercício 4</strong></span></h2></hgroup><article  class="build" id="exercício-4">
 
 <ul>
-<li><p>Gere uma amostra de \(n=10.000\) tempos de vida ao nascer de acordo com a tabela do SOA. Fixe a semente como <code>2018</code>.</p></li>
+<li><p>Gere uma amostra de \(n=10.000\) tempos de vida ao nascer de acordo com a tabela do SOA. Fixe a semente como <code>2021</code>.</p></li>
 <li><p>Com i=6%, calcule o valor presente do pagamento de uma indenização de $1.000 no final do ano de morte para cada indivíduo dessa amostra. Armazene esses valores em um vetor <code>VP</code>.</p></li>
 <li><p>Encontre a média e a variância de <code>VP</code>.</p></li>
 </ul>
 
-<pre >## [1] 45.70047</pre>
+<pre >## [1] 48.77582</pre>
 
-<pre >## [1] 21324.62</pre>
+<pre >## [1] 22801.13</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-7">
+<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-4">
 
 <ul>
 <li><p>Esses valores dependem da amostra que geramos.</p></li>
@@ -342,23 +424,29 @@ t.test(x=K0, mu=exn(soa08Act))</pre>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-8">
+<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-5">
 
 <div class="centered">
 <img src='https://raw.githubusercontent.com/thaispaiva/EST171_site/master/static/slides/animated_histogram/hist_ex.gif' title=''/></div>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-9" class="build">
+<strong>Exemplo</strong></span></h2></hgroup><article  class="build" id="exemplo-6">
 
 <ul>
 <li>Compare esses valores que você obteve com os valores de VPA e variância calculados pelas funções do pacote <code>lifecontingencies</code>.</li>
 </ul>
 
+<pre class = 'prettyprint lang-r'>## média teórica
+( A = 1000*Axn(soa08Act, 0, i=0.06) )</pre>
+
 <pre >## [1] 49.00258</pre>
+
+<pre class = 'prettyprint lang-r'>## variância teórica
+( 1000^2*Axn(soa08Act, 0, i=0.06, power=2) - A^2 )</pre>
 
 <pre >## [1] 23519.76</pre>
 
-</article></slide><slide class=""><hgroup><h2>Princípio do Percentil</h2></hgroup><article  id="principio-do-percentil">
+</article></slide><slide class=""><hgroup><h2>Princípio do Percentil</h2></hgroup><article  id="princípio-do-percentil">
 
 <ul>
 <li><p>A simulação de uma amostra de tempos de vida ao nascer também pode ser útil para determinar o prêmio de acordo com o <span class="black">
@@ -366,9 +454,9 @@ Princípio do Percentil</span>.</p></li>
 <li><p>O prêmio é determinado como sendo o valor mínimo que faz com que a probabilidade da seguradora ter uma perda total negativa seja \(\alpha\).</p></li>
 </ul>
 
-<p>\[L_{0,i} = VP(\mbox{benef. futuros})_{0,i} - VP(\mbox{prêmios futuros})_{0,i} \] \[L = \sum_{i=1} L_{0,i} \] \[P(L &lt; 0) = \alpha\]</p>
+<p>\[L_{0,i} = VP(\mbox{benef. futuros})_{0,i} - VP(\mbox{prêmios futuros})_{0,i} \] \[L = \sum_{i=1}^N L_{0,i} \] \[P(L &lt; 0) = \alpha\]</p>
 
-</article></slide><slide class=""><hgroup><h2>Princípio do Percentil</h2></hgroup><article  id="principio-do-percentil-1">
+</article></slide><slide class=""><hgroup><h2>Princípio do Percentil</h2></hgroup><article  id="princípio-do-percentil-1">
 
 <ul>
 <li><p>Se o tamanho da carteira for suficientemente grande, podemos usar o Teorema Central do Limite para encontrar o prêmio de acordo com o Princípio do Percentil.</p></li>
@@ -381,22 +469,22 @@ Princípio do Percentil</span>.</p></li>
 <li>Assim, usamos a equação acima para encontrar o prêmio que satisfaz essa condição, já que \(E(L)\) e \(Var(L)\) dependem de \(P\).</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Princípio do Percentil</h2></hgroup><article  id="principio-do-percentil-2">
+</article></slide><slide class=""><hgroup><h2>Princípio do Percentil</h2></hgroup><article  id="princípio-do-percentil-2">
 
 <ul>
 <li>Também podemos usar a nossa amostra de tempos de vida simulados, e obter o prêmio que satisfaz o princípio do percentil usando Métodos de Monte Carlo.</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-10">
+<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-7">
 
 <ul>
 <li><p>Um segurado de idade 25 contrata um seguro temporário por 40 anos de $100.000.</p></li>
-<li><p>Encontre o menor prêmio que a seguradora pode cobrar para garantir que a probabilidade de perda negativa não seja maior do que 5%.</p></li>
+<li><p>Encontre o menor prêmio que a seguradora pode cobrar para garantir que a probabilidade de perda positiva (prejuízo) não seja maior do que 5%.</p></li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-11" class="build">
+<strong>Exemplo</strong></span></h2></hgroup><article  class="build" id="exemplo-8">
 
 <pre class = 'prettyprint lang-r'>## Exemplo - cálculo do prêmio de acordo com o princípio do percentil
 
@@ -416,7 +504,7 @@ mean(samples&gt;0)
 qxt(soa08Act,25,40)</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-12">
+<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-9">
 
 <pre class = 'prettyprint lang-r'>## Calculando o prêmio (único)
 
@@ -436,12 +524,12 @@ qxt(soa08Act,25,40)</pre>
 <pre >## [1] 4797.088</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-13">
+<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-10">
 
 <p><img src="16-mais_seguros_files/figure-html/unnamed-chunk-22-1.png" width="720" style="display: block; margin: auto;" /></p>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-14">
+<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-11">
 
 <pre class = 'prettyprint lang-r'>## probabilidade de perda positiva
 mean(samples&gt;P.perc)</pre>
@@ -453,21 +541,22 @@ mean(samples&gt;P.perc)</pre>
 <pre >## [1] 0.2143</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-15">
+<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-12">
 
 <ul>
 <li><p>Uma seguradora vai subscrever a cobertura de pagamentos de aposentadorias vitalícias para uma carteira de 1000 aposentados, todos de 65 anos.</p></li>
-<li><p>Calcule o valor a ser cobrado de cada aposentado para que a probabilidade da seguradora ter uma perda negativa seja de no máximo 1%.</p></li>
+<li><p>Calcule o valor a ser cobrado de cada aposentado para que a probabilidade da seguradora ter uma perda positiva (prejuízo) seja de no máximo 1%.</p></li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-16" class="build">
+<strong>Exemplo</strong></span></h2></hgroup><article  class="build" id="exemplo-13">
 
 <pre class = 'prettyprint lang-r'>## Exemplo - carteira de aposentados
 
 ## primeiro, gerar amostra de VPAs de anuidades
-set.seed(1405)
-ax65 = rLifeContingencies(100000, lifecontingency=&quot;axn&quot;, object=soa08Act, x=65, parallel=TRUE)
+set.seed(1605)
+ax65 = rLifeContingencies(100000, lifecontingency=&quot;axn&quot;, object=soa08Act, 
+                          x=65, parallel=TRUE)
 
 ## distribuição da amostra
 head(ax65)
@@ -476,7 +565,7 @@ hist(ax65)</pre>
 <pre class = 'prettyprint lang-r'>summary(ax65)</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-17">
+<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-14">
 
 <ul>
 <li>Se \(Z\) é a v.a. que representa o VP dessa anuidade, o VP da perda total da carteira com 1000 segurados tem distribuição normal com média e desvio padrão dados por:</li>
@@ -491,14 +580,14 @@ sdax65 = sd(ax65)
 ## prêmio
 (P = qnorm(p=0.99, mean=1000*muax65, sd=sqrt(1000)*sdax65)/1000)</pre>
 
-<pre >## [1] 10.16922</pre>
+<pre >## [1] 10.15841</pre>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-18">
+<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-15">
 
 <p><img src="16-mais_seguros_files/figure-html/unnamed-chunk-26-1.png" width="720" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class=""><hgroup><h2>Simulação de VPAs</h2></hgroup><article  id="simulacao-de-vpas">
+</article></slide><slide class=""><hgroup><h2>Simulação de VPAs</h2></hgroup><article  id="simulação-de-vpas">
 
 <ul>
 <li>O pacote <code>lifecontingencies</code> também encontra o VPA de momentos de ordem maior do que um, com a opção <code>power</code>.</li>
@@ -512,7 +601,7 @@ sdax65 = sd(ax65)
 </ul>
 
 </article></slide><slide class=""><hgroup><h2><span class="green3">
-<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-19">
+<strong>Exemplo</strong></span></h2></hgroup><article  id="exemplo-16">
 
 <pre class = 'prettyprint lang-r'>## Exemplo - variância de seguro crescente
 

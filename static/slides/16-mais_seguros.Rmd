@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "14 de maio de 2018"
+date: "18 de fevereiro de 2021"
 subtitle: "16 - Seguros: mais cálculos"
 
 output:
@@ -66,7 +66,7 @@ $$T_{xy} + T_{\overline{xy}} = T_x + T_y $$
 - Essa relação também se aplica a Valores Presentes Atuariais.
 
 
-## <span class="green3">**Exemplo**</span> {.build}
+## <span class="green3">**Exemplo 1**</span> {.build}
 
 - Considere duas vidas independentes com idades 60 e 70.
 
@@ -95,7 +95,7 @@ Axn(soa08Act,60) + Axn(soa08Act,70) - Axyzn(tab.xy,x=c(60,70))
 ```
 
 
-## <span class="green3">**Exemplo**</span> {.build}
+## <span class="green3">**Exemplo 2**</span> {.build}
 
 - E se a indenização do seguro for paga no final do ano da *primeira morte*? O VPA será maior ou menor?
 <br><br>
@@ -134,7 +134,7 @@ $$\ddot{a}_{x|y} = \ddot{a}_y - \ddot{a}_{xy}$$
 </span>
 
 
-## <span class="green3">**Exemplo**</span> {.build}
+## <span class="green3">**Exemplo 3**</span> {.build}
 
 - Calcule o VPA de uma anuidade reversível vitalícia para um segurado de 60 anos, que começa a ser paga após a morte de um indivíduo de 70 anos.
 
@@ -143,11 +143,9 @@ $$\ddot{a}_{x|y} = \ddot{a}_y - \ddot{a}_{xy}$$
 ## Exemplo 3: anuidades reversíveis
 
 ## VPA de a_{60|70}
-##
-
 ```
 
-```{r echo=FALSE, purl=FALSE}
+```{r echo=TRUE, purl=TRUE}
 axn(soa08Act,60) - axyzn(tab.xy,c(60,70))
 ```
 
@@ -166,7 +164,7 @@ axn(soa08Act,60) - axyzn(tab.xy,c(60,70))
 - Similarmente, as <span class="black">**reservas**</span> são obtidas como a diferença entre o VPA dos benefícios e despesas futuros e o VPA dos prêmios futuros.
 
 
-## <span class="green3">**Exemplo**</span> 
+## <span class="green3">**Exercício 1**</span> 
 
 - Para um seguro de vida inteira discreto com soma segurada de \$100.000 para uma vida de 35 anos, considere:
 
@@ -180,16 +178,21 @@ axn(soa08Act,60) - axyzn(tab.xy,c(60,70))
   
 - Encontre o prêmio bruto $G$.
 
+<span style="font-size: 20px;">
+$$ G. \ddot{a}_{35} = 100.000 \times A_{35} + \left( 0,1.G + 25 + 2,5 . \frac{100.000}{1.000} \right) \times \ddot{a}_{35}$$
+</span>
+
+
 ```{r echo=FALSE}
 
-## Exemplo 4: Seguro com despesas
+## Exercicio 1: Seguro com despesas
 
-## encontre o prêmio bruto
+## encontre o prêmio bruto G
 
 ```
 
 
-## <span class="green3">**Exemplo**</span> 
+## <span class="green3">**Exercício 2**</span> 
 
 - Para um seguro de vida inteira de \$1.000 para um segurado de 45 anos, considere:
 
@@ -208,18 +211,18 @@ axn(soa08Act,60) - axyzn(tab.xy,c(60,70))
 
 ```{r echo=FALSE}
 
-## Exemplo 5: Reserva com despesas
+## Exercício 2: Reserva com despesas
 
-## encontre o prêmio puro
+## a) encontre o prêmio puro
 ##
 
-## encontre o prêmio bruto
+## b) encontre o prêmio bruto
 ##
 
-## encontre a reserva líquida
+## c) encontre a reserva líquida
 ##
 
-## encontre a reserva bruta
+## d) encontre a reserva bruta
 ##
 
 ############################################################
@@ -286,13 +289,28 @@ t.test(x=K0, mu=exn(soa08Act))
 
 ```
 
-## <span class="green3">**Exercício**</span>
+## <span class="green3">**Exercício 3**</span>
 
 - Gere uma nova amostra de K0 alterando a semente. Repita os resultados do slide anterior. O que mudou?
 
 - E se aumentar o tamanho da amostra?
 
 - E se selecionarmos `type="Tx"`?
+
+```{r echo=FALSE}
+## Exercicio 3: repetir simulação de tempos de vida
+
+## alterar semente
+##
+
+## aumentar n
+##
+
+## simular Tx
+##
+
+```
+
 
 
 ## Simulação de tempos de vida
@@ -302,9 +320,9 @@ t.test(x=K0, mu=exn(soa08Act))
 - Por exemplo, se quisermos calcular a esperança e variância do valor presente de um seguro de vida inteira.
 
 
-## <span class="green3">**Exemplo**</span> {.build}
+## <span class="green3">**Exercício 4**</span> {.build}
 
-- Gere uma amostra de $n=10.000$ tempos de vida ao nascer de acordo com a tabela do SOA. Fixe a semente como `2018`.
+- Gere uma amostra de $n=10.000$ tempos de vida ao nascer de acordo com a tabela do SOA. Fixe a semente como `2021`.
 
 - Com i=6\%, calcule o valor presente do pagamento de uma indenização de \$1.000 no final do ano de morte para cada indivíduo dessa amostra. Armazene esses valores em um vetor `VP`.
 
@@ -315,7 +333,7 @@ t.test(x=K0, mu=exn(soa08Act))
 ## Exemplo - simulação de valores presente de seguro
 
 ## 1) gerar amostra de tempos de vida ao nascer
-set.seed(2018)
+set.seed(2021)
 ##
 
 ## 2) calcular valor presente da indenização
@@ -328,7 +346,7 @@ set.seed(2018)
 
 ```{r echo=FALSE, purl=FALSE}
 ## 1) gerar amostra de tempos de vida ao nascer
-set.seed(2018)
+set.seed(2021)
 K0 = rLife(10000, soa08Act, 0, type="Kx")
 
 ## 2) calcular valor presente da indenização
@@ -368,17 +386,8 @@ var(VP)
 
 - Compare esses valores que você obteve com os valores de VPA e variância calculados pelas funções do pacote `lifecontingencies`.
 
-```{r echo=FALSE}
-## média teórica
-##
 
-## variância teórica
-##
-
-```
-
-
-```{r echo=FALSE, purl=FALSE}
+```{r echo=TRUE, purl=TRUE}
 ## média teórica
 ( A = 1000*Axn(soa08Act, 0, i=0.06) )
 
@@ -394,7 +403,7 @@ var(VP)
 - O prêmio é determinado como sendo o valor mínimo que faz com que a probabilidade da seguradora ter uma perda total negativa seja $\alpha$.
 
 $$L_{0,i} = VP(\mbox{benef. futuros})_{0,i} - VP(\mbox{prêmios futuros})_{0,i} $$
-$$L = \sum_{i=1} L_{0,i} $$
+$$L = \sum_{i=1}^N L_{0,i} $$
 $$P(L < 0) = \alpha$$
 
 
@@ -418,7 +427,7 @@ $$P(L<0) = P\left( \frac{L-E(L)}{\sqrt{Var(L)}} < \frac{-E(L)}{\sqrt{Var(L)}} \r
 
 - Um segurado de idade 25 contrata um seguro temporário por 40 anos de \$100.000.
 
-- Encontre o menor prêmio que a seguradora pode cobrar para garantir que a probabilidade de perda negativa não seja maior do que 5\%.
+- Encontre o menor prêmio que a seguradora pode cobrar para garantir que a probabilidade de perda positiva (prejuízo) não seja maior do que 5\%.
 
 
 ## <span class="green3">**Exemplo**</span> {.build}
@@ -435,6 +444,7 @@ samples = 100000*rLifeContingencies(n=10000, lifecontingency="Axn", object=soa08
 ## distribuição da amostra
 head(samples)
 hist(samples)
+
 summary(samples)
 
 ## probabilidade de VPA positivo
@@ -485,7 +495,7 @@ mean(samples>P.equi)
 
 - Uma seguradora vai subscrever a cobertura de pagamentos de aposentadorias vitalícias para uma carteira de 1000 aposentados, todos de 65 anos.
 
-- Calcule o valor a ser cobrado de cada aposentado para que a probabilidade da seguradora ter uma perda negativa seja de no máximo 1\%.
+- Calcule o valor a ser cobrado de cada aposentado para que a probabilidade da seguradora ter uma perda positiva (prejuízo) seja de no máximo 1\%.
 
 
 ## <span class="green3">**Exemplo**</span> {.build}
@@ -495,8 +505,9 @@ mean(samples>P.equi)
 ## Exemplo - carteira de aposentados
 
 ## primeiro, gerar amostra de VPAs de anuidades
-set.seed(1405)
-ax65 = rLifeContingencies(100000, lifecontingency="axn", object=soa08Act, x=65, parallel=TRUE)
+set.seed(1605)
+ax65 = rLifeContingencies(100000, lifecontingency="axn", object=soa08Act, 
+                          x=65, parallel=TRUE)
 
 ## distribuição da amostra
 head(ax65)
