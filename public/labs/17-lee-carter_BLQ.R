@@ -53,4 +53,5 @@ kt.hi.forecast <- kt.forecast - (1.96*kt.stderr)
 ## Alguns gráficos
 plot (seq(1950, 2002), kt)
 plot(x, kt.forecast)
-
+plot(model.swfem$ax)
+plot(model.swfem$bx)

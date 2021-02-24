@@ -1,6 +1,6 @@
 ---
 title: "Lista de Exercícios 6"
-date: "Entrega: **27/02/2021** via Moodle (até as 23:59)"
+date: "Entrega: **01/03/2021** via Moodle (até as 23:59)"
 output: 
   html_document: 
     css: hw.css
