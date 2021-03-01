@@ -189,7 +189,7 @@ slide:not(.current) .plotly.html-widget{
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">23 de maio de 2018</p>
+            <p style="margin-top: 6px; margin-left: -2px;">02 de março de 2021</p>
           </hgroup>
   </slide>
 
@@ -368,19 +368,19 @@ Nas = read.csv(file, colClasses = c(&quot;Date&quot;, rep(&quot;numeric&quot;,6)
 head(Nas)</pre>
 
 <pre >##         Date    Open    High     Low   Close Adj.Close     Volume
-## 1 2017-05-22 6098.25 6135.92 6097.24 6133.62   6133.62 1726230000
-## 2 2017-05-23 6149.55 6150.91 6121.79 6138.71   6138.71 1705860000
-## 3 2017-05-24 6154.18 6166.09 6139.33 6163.02   6163.02 1666050000
-## 4 2017-05-25 6183.02 6217.34 6174.52 6205.26   6205.26 1767690000
-## 5 2017-05-26 6207.04 6211.52 6196.66 6210.19   6210.19 1571040000
-## 6 2017-05-30 6204.18 6217.13 6200.41 6203.19   6203.19 1688480000</pre>
+## 1 2020-03-02 8667.14 8952.81 8543.35 8952.17   8952.17 4232760000
+## 2 2020-03-03 8965.10 9070.32 8602.89 8684.09   8684.09 4336700000
+## 3 2020-03-04 8834.10 9019.96 8757.66 9018.09   9018.09 3602870000
+## 4 2020-03-05 8790.09 8921.08 8677.39 8738.59   8738.59 3748090000
+## 5 2020-03-06 8469.02 8612.36 8375.13 8575.62   8575.62 4279850000
+## 6 2020-03-09 7957.93 8243.31 7943.16 7950.68   7950.68 4530350000</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Retornos</h2></hgroup><article  id="retornos">
 
 </article></slide><slide class=""><hgroup><h2>Retornos</h2></hgroup><article  id="retornos-1">
 
 <ul>
-<li><p>A partir dos dados que baixamos, vamos definir algumas quantidades mais apropriadas para modelar com uma distribuição estatísticas.</p></li>
+<li><p>A partir dos dados que baixamos, vamos definir algumas quantidades mais apropriadas para modelar com uma distribuição estatística.</p></li>
 <li><p>Por exemplo, uma das transformações mais comuns é para obter os <span class="black">
 <strong>retornos</strong></span>:</p></li>
 </ul>
@@ -450,7 +450,15 @@ pftPerf &lt;- function(x, w, W0 = 1000) {
 
 </article></slide><slide class=""><hgroup><h2>Valor do portfólio</h2></hgroup><article  id="valor-do-portfólio-2">
 
-<p><img src="18-portfolios_files/figure-html/unnamed-chunk-16-1.png" width="720" style="display: block; margin: auto;" /></p></article></slide>
+<p><img src="18-portfolios_files/figure-html/unnamed-chunk-16-1.png" width="720" style="display: block; margin: auto;" /></p>
+
+</article></slide><slide class=""><hgroup><h2><span class="green3">
+<strong>Exercício</strong></span></h2></hgroup><article  id="exercício">
+
+<ul>
+<li><p>Repetir o gráfico usando os dados da NASDAQ.</p></li>
+<li><p>Nesse caso, assumir um portfólio apenas com este índice (peso de 100%).</p></li>
+</ul></article></slide>
 
 
   <slide class="backdrop"></slide>

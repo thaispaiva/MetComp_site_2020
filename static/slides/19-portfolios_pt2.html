@@ -4,7 +4,6 @@
   <title>Métodos Computacionais para Análise de Risco</title>
 
   <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="generator" content="pandoc" />
 
@@ -64,6 +63,10 @@
       font-style: italic;
     }
 
+    summary {
+      display: list-item;
+    }
+
     slides > slide {
       -webkit-transition: all 0.4s ease-in-out;
       -moz-transition: all 0.4s ease-in-out;
@@ -79,7 +82,81 @@
       transition: opacity 0.6s ease-in 0.4s;
       opacity: 0;
     }
+/* https://github.com/ropensci/plotly/pull/524#issuecomment-468142578 */
+slide:not(.current) .plotly.html-widget{
+  display: block;
+}
 
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+            code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode { white-space: pre; position: relative; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    code.sourceCode { white-space: pre-wrap; }
+    code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+        
     slides > slide:not(.nobackground):before {
       font-size: 12pt;
       content: "";
@@ -112,14 +189,14 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">04 de junho de 2018</p>
+            <p style="margin-top: 6px; margin-left: -2px;">04 de março de 2021</p>
           </hgroup>
   </slide>
 
 <slide class=""><hgroup><h2>Aula de Hoje</h2></hgroup><article  id="aula-de-hoje">
 
 <ul>
-<li>Otimização de portfólios com Restrições
+<li><p>Otimização de portfólios com Restrições</p>
 
 <ul>
 <li>Retorno Alvo</li>
@@ -127,7 +204,7 @@
 <li>Posições <em>Long-only</em></li>
 <li>Restrições de grupo</li>
 </ul></li>
-<li>Modelo de Média-Variância
+<li><p>Modelo de Média-Variância</p>
 
 <ul>
 <li>Exemplos</li>
@@ -136,7 +213,7 @@
 <li><p>Modelo de Mínima Variância</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Otimização de portfólios</h2></hgroup><article  id="otimizacao-de-portfolios">
+</article></slide><slide class=""><hgroup><h2>Otimização de portfólios</h2></hgroup><article  id="otimização-de-portfólios">
 
 <ul>
 <li><p><span class="black">
@@ -145,7 +222,7 @@
 <li><p>Em seguida, vamos ver o Modelo de Média-Variância, em que a medida de risco é dada pela matriz de covariância do portfólio, e algumas variações deste modelo ilustrados por exemplos.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Otimização de portfólios </h2><h3> Restrições</h3></hgroup><article  id="otimizacao-de-portfolios-restricoes">
+</article></slide><slide class=""><hgroup><h2>Otimização de portfólios </h2><h3> Restrições</h3></hgroup><article  id="otimização-de-portfólios-restrições">
 
 <ul>
 <li><p>Além das medidas de risco, outro ponto importante da otimização de portfólios é a <strong>especificação das restrições</strong> operacionais ou preferenciais.</p></li>
@@ -153,7 +230,7 @@
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Restrições </h2><h3> <span class="black">
-<em>Target Reward</em> (retorno alvo)</span></h3></hgroup><article  id="restricoes-target-reward-retorno-alvo">
+<em>Target Reward</em> (retorno alvo)</span></h3></hgroup><article  id="restrições-target-reward-retorno-alvo">
 
 <ul>
 <li><p>Essa restrição vem do objetivo de atingir um <strong>retorno alvo</strong> com a alocação do portfólio.</p></li>
@@ -165,7 +242,7 @@
 <p>onde \(\mu\) é o vetor de retornos médios dos componentes do portfólio, \(\mathbf{w}\) são os pesos que desejamos calcular, e \(\bar{r}\) é o retorno alvo.</p>
 
 </article></slide><slide class=""><hgroup><h2>Restrições </h2><h3> <span class="black">
-<em>Target Reward</em> (retorno alvo)</span></h3></hgroup><article  id="restricoes-target-reward-retorno-alvo-1">
+<em>Target Reward</em> (retorno alvo)</span></h3></hgroup><article  id="restrições-target-reward-retorno-alvo-1">
 
 <ul>
 <li>Para implementar essa restrição no R, vamos considerar a matriz \(\mathbf{A}_{eq}\) e o vetor \(\mathbf{a}_{eq}\) (da aula passada).</li>
@@ -179,7 +256,7 @@ targetReturn &lt;- function(x, target) {
 }</pre>
 
 </article></slide><slide class=""><hgroup><h2>Restrições </h2><h3> <span class="black">
-<em>Full Investment</em> (investimento total)</span></h3></hgroup><article  id="restricoes-full-investment-investimento-total">
+<em>Full Investment</em> (investimento total)</span></h3></hgroup><article  id="restrições-full-investment-investimento-total">
 
 <ul>
 <li><p>Essa restrição diz que o capital deve estar todo investido no portfólio.</p></li>
@@ -194,7 +271,7 @@ fullInvest &lt;- function(x) {
 }</pre>
 
 </article></slide><slide class=""><hgroup><h2>Restrições </h2><h3> <span class="black">
-<em>Long Only</em> (posições compradoras)</span></h3></hgroup><article  id="restricoes-long-only-posicoes-compradoras">
+<em>Long Only</em> (posições compradoras)</span></h3></hgroup><article  id="restrições-long-only-posições-compradoras">
 
 <ul>
 <li><p>Essa restrição especifica que o fundo só pode operar com posições compradoras (<em>long</em> = <a href='http://defendaseudinheiro.com.br/operar-comprado-versus-operar-vendido' title=''>operar &ldquo;comprado&rdquo;</a>), isto é, vai receber mais com a valorização dos ativos.</p></li>
@@ -203,7 +280,7 @@ fullInvest &lt;- function(x) {
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Restrições </h2><h3> <span class="black">
-<em>Long Only</em> (posições compradoras)</span></h3></hgroup><article  id="restricoes-long-only-posicoes-compradoras-1">
+<em>Long Only</em> (posições compradoras)</span></h3></hgroup><article  id="restrições-long-only-posições-compradoras-1">
 
 <p>\[ \mathbf{A} \,\mathbf{x} \geq \mathbf{a} \]</p>
 
@@ -213,7 +290,7 @@ longOnly &lt;- function(x) {
 }</pre>
 
 </article></slide><slide class=""><hgroup><h2>Restrições </h2><h3> <span class="black">
-Restrições de grupo</span></h3></hgroup><article  id="restricoes-restricoes-de-grupo">
+Restrições de grupo</span></h3></hgroup><article  id="restrições-restrições-de-grupo">
 
 <ul>
 <li><p>Essas restrições são derivadas de restrições operacionais que obrigam um investidor a ter uma porcentagem mínima/máximo dos ativos em um determinado grupo de ações.</p></li>
@@ -226,7 +303,7 @@ Restrições de grupo</span></h3></hgroup><article  id="restricoes-restricoes-de
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Dados índices NASDAQ</h2></hgroup><article  id="dados-indices-nasdaq">
+</article></slide><slide class=""><hgroup><h2>Dados índices NASDAQ</h2></hgroup><article  id="dados-índices-nasdaq">
 
 <ul>
 <li>Para isso, vamos usar os seguintes índices (Capítulo 13):</li>
@@ -234,7 +311,7 @@ Restrições de grupo</span></h3></hgroup><article  id="restricoes-restricoes-de
 
 <p><img src="img/nasdaq.png" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class=""><hgroup><h2>Dados índices NASDAQ</h2></hgroup><article  id="dados-indices-nasdaq-1">
+</article></slide><slide class=""><hgroup><h2>Dados índices NASDAQ</h2></hgroup><article  id="dados-índices-nasdaq-1">
 
 <ul>
 <li>Foram extraídos o valor de cada índice entre 24/05/2017 e 23/05/2018 (site: <a href='https://www.investing.com' title=''>https://www.investing.com</a>)</li>
@@ -272,7 +349,7 @@ GroupBudget &lt;- function() {
   list(A = rbind(A1, A2, A3), a = c(a1, a2, a3))
 }</pre>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Modelo de Média-Variância</h2></hgroup><article  id="modelo-de-media-variancia">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Modelo de Média-Variância</h2></hgroup><article  id="modelo-de-média-variância">
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-1">
 
@@ -289,7 +366,7 @@ GroupBudget &lt;- function() {
 <li>e é preciso fazer investimento total.</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância</h2></hgroup><article  id="modelo-de-media-variancia-1">
+</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância</h2></hgroup><article  id="modelo-de-média-variância-1">
 
 <ul>
 <li>A <span class="red3">
@@ -298,7 +375,7 @@ medida de risco</span> proposta por Markowitz é uma <strong>matriz de covariân
 
 <p>\[\mathbf{w}&#39;\, \Sigma \, \mathbf{w} = \sum_i \sum_j w_i \,. w_j \,. \mbox{Cov}(\mathbf{x}_i,\mathbf{x}_j)  \] onde \(\Sigma\) é a matriz de covariância e \(\mathbf{w}\) são os pesos do portfólio.</p>
 
-</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância</h2></hgroup><article  id="modelo-de-media-variancia-2">
+</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância</h2></hgroup><article  id="modelo-de-média-variância-2">
 
 <ul>
 <li>A otimização é obtida definindo-se um <strong>retorno alvo</strong> \(\bar{r}\), e as restrições de investimento total e <em>long-only</em>, tal que:</li>
@@ -311,7 +388,7 @@ medida de risco</span> proposta por Markowitz é uma <strong>matriz de covariân
 
 <p>onde \(\hat{\mu}\) é o vetor dos retornos médios.</p>
 
-</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância</h2></hgroup><article  id="modelo-de-media-variancia-3">
+</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância</h2></hgroup><article  id="modelo-de-média-variância-3">
 
 <ul>
 <li><p>Esse problema não pode ser resolvido analiticamente, por isso precisamos de um algoritmo de otimização.</p></li>
@@ -340,7 +417,7 @@ MV_QP &lt;- function(x, target, Sigma = cov(x), ...,
   weights
 }</pre>
 
-</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância</h2></hgroup><article  id="modelo-de-media-variancia-4">
+</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância</h2></hgroup><article  id="modelo-de-média-variância-4">
 
 <ul>
 <li><p>Na função <code>MV_QP</code>, <code>x</code> são os retornos dos ativos, <code>target</code> é o retorno alvo do portfólio, e <code>Sigma</code> é o estimador clássico de covariância.</p></li>
@@ -348,7 +425,7 @@ MV_QP &lt;- function(x, target, Sigma = cov(x), ...,
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância </h2><h3> <span class="green3">
-<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-media-variancia-exemplo">
+<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-média-variância-exemplo">
 
 <ul>
 <li><p>Esse modelo pode ser implementado de algumas maneiras diferentes.</p></li>
@@ -363,7 +440,7 @@ round(w,4)</pre>
 ## 0.0000 0.0000 0.0000 0.2888 0.4748 0.0245 0.0000 0.0000 0.0717 0.1403</pre>
 
 </article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância </h2><h3> <span class="green3">
-<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-media-variancia-exemplo-1">
+<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-média-variância-exemplo-1">
 
 <pre class = 'prettyprint lang-r'>## restrições atendidas?
 all.equal( c( t(w)%*%col_means(x) ) , mean(x) )   # retorno alvo
@@ -372,7 +449,7 @@ all.equal( sum(w) , 1 )                           # investimento total
 all(w &gt;= 0)                                       # long only</pre>
 
 </article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância </h2><h3> <span class="green3">
-<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-media-variancia-exemplo-2">
+<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-média-variância-exemplo-2">
 
 <ul>
 <li>Pesos que minimizam o risco e atingem o retorno médio:</li>
@@ -381,7 +458,7 @@ all(w &gt;= 0)                                       # long only</pre>
 <p><img src="19-portfolios_pt2_files/figure-html/unnamed-chunk-14-1.png" width="720" style="display: block; margin: auto;" /></p>
 
 </article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância </h2><h3> <span class="green3">
-<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-media-variancia-exemplo-3">
+<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-média-variância-exemplo-3">
 
 <pre class = 'prettyprint lang-r'>## modelo de média-variância
 t(w)%*%cov(x)%*%w   # covariância
@@ -393,7 +470,7 @@ t(u)%*%cov(x)%*%u   # covariância
 t(u)%*%col_means(x) # retorno</pre>
 
 </article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância </h2><h3> <span class="green3">
-<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-media-variancia-exemplo-4">
+<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-média-variância-exemplo-4">
 
 <ul>
 <li><p>Vamos fazer outro teste para o nosso modelo.</p></li>
@@ -407,7 +484,7 @@ which(col_means(x)==min(col_means(x)))</pre>
 ##   9</pre>
 
 </article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância </h2><h3> <span class="green3">
-<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-media-variancia-exemplo-5">
+<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-média-variância-exemplo-5">
 
 <pre class = 'prettyprint lang-r'>w &lt;- MV_QP(x, min(col_means(x)))
 round(w, 4)</pre>
@@ -415,7 +492,7 @@ round(w, 4)</pre>
 <p><img src="19-portfolios_pt2_files/figure-html/unnamed-chunk-18-1.png" width="720" style="display: block; margin: auto;" /></p>
 
 </article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância </h2><h3> <span class="green3">
-<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-media-variancia-exemplo-6">
+<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-média-variância-exemplo-6">
 
 <pre class = 'prettyprint lang-r'>## restrições atendidas?
 all.equal( c(t(w)%*%col_means(x)) , min(col_means(x)) )  # retorno alvo
@@ -423,7 +500,7 @@ all.equal(sum(w) , 1)                                    # investimento total
 all(round(w,4) &gt;= 0)                                     # long only
 # all(w &gt;= 0)</pre>
 
-</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância</h2></hgroup><article  id="modelo-de-media-variancia-5">
+</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância</h2></hgroup><article  id="modelo-de-média-variância-5">
 
 <ul>
 <li>Até agora, para rodar a função de otimização de acordo com o Modelo de Média-Variância, só especificamos a matriz de retornos <code>x</code> e o valor do retorno alvo <code>target</code>.</li>
@@ -440,16 +517,16 @@ all(round(w,4) &gt;= 0)                                     # long only
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância </h2><h3> <span class="green3">
-<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-media-variancia-exemplo-7">
+<strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-média-variância-exemplo-7">
 
 <pre class = 'prettyprint lang-r'>## Exemplo - restrições de grupo
 w &lt;- MV_QP(x, mean(x), Sigma = covMcd(x)$cov, GroupBudget())</pre>
 
 <p><img src="19-portfolios_pt2_files/figure-html/unnamed-chunk-23-1.png" width="720" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Modelo de Média-Variância Robusto</h2></hgroup><article  id="modelo-de-media-variancia-robusto">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Modelo de Média-Variância Robusto</h2></hgroup><article  id="modelo-de-média-variância-robusto">
 
-</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância Robusto</h2></hgroup><article  id="modelo-de-media-variancia-robusto-1">
+</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância Robusto</h2></hgroup><article  id="modelo-de-média-variância-robusto-1">
 
 <ul>
 <li><p>Uma desvantagem do Modelo de Média-Variância é o uso da matriz de covariância para estimar o risco.</p></li>
@@ -459,7 +536,7 @@ w &lt;- MV_QP(x, mean(x), Sigma = covMcd(x)$cov, GroupBudget())</pre>
 covariância</span>.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância Robusto</h2></hgroup><article  id="modelo-de-media-variancia-robusto-2">
+</article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância Robusto</h2></hgroup><article  id="modelo-de-média-variância-robusto-2">
 
 <ul>
 <li>Comparação dos pesos do método clássico e do método robusto:</li>
@@ -467,9 +544,9 @@ covariância</span>.</p></li>
 
 <p><img src="19-portfolios_pt2_files/figure-html/unnamed-chunk-24-1.png" width="720" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Modelo de Mínima Variância</h2></hgroup><article  id="modelo-de-minima-variancia">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Modelo de Mínima Variância</h2></hgroup><article  id="modelo-de-mínima-variância">
 
-</article></slide><slide class=""><hgroup><h2>Modelo de Mínima Variância</h2></hgroup><article  id="modelo-de-minima-variancia-1">
+</article></slide><slide class=""><hgroup><h2>Modelo de Mínima Variância</h2></hgroup><article  id="modelo-de-mínima-variância-1">
 
 <ul>
 <li><p>Outro ponto criticado do Modelo de Média-Variância é o uso do retorno médio dos componentes do portfólio como retorno alvo.</p></li>
@@ -478,14 +555,14 @@ covariância</span>.</p></li>
 <strong>Modelo de Mínima Variância</strong></span> que otimiza os pesos apenas levando em conta a minimização da covariância sem fixar o retorno alvo.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Modelo de Mínima Variância</h2></hgroup><article  id="modelo-de-minima-variancia-2">
+</article></slide><slide class=""><hgroup><h2>Modelo de Mínima Variância</h2></hgroup><article  id="modelo-de-mínima-variância-2">
 
 <pre class = 'prettyprint lang-r'>## Modelo de Mínima Variância
 w &lt;- MV_QP(x, cstr = c(fullInvest(x), longOnly(x)))</pre>
 
 <p><img src="19-portfolios_pt2_files/figure-html/unnamed-chunk-26-1.png" width="720" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class=""><hgroup><h2>Outros Modelos de Alocação</h2></hgroup><article  id="outros-modelos-de-alocacao">
+</article></slide><slide class=""><hgroup><h2>Outros Modelos de Alocação</h2></hgroup><article  id="outros-modelos-de-alocação">
 
 <ul>
 <li><p>Além da matriz de covariância, existem outras alternativas para a <span class="red3">
@@ -494,14 +571,14 @@ w &lt;- MV_QP(x, cstr = c(fullInvest(x), longOnly(x)))</pre>
 <li><p>Mais detalhes e exemplos: Seção 13.5.5</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Outros Modelos de Alocação</h2></hgroup><article  id="outros-modelos-de-alocacao-1">
+</article></slide><slide class=""><hgroup><h2>Outros Modelos de Alocação</h2></hgroup><article  id="outros-modelos-de-alocação-1">
 
 <ul>
 <li><p>Os modelos que consideramos aqui têm apenas restrições lineares. No entanto, em alguns cenários, a alocação de pesos de um portfólio pode requerer <strong>otimização sob restrições não-lineares</strong>.</p></li>
 <li><p>Por exemplo, um investidor pode estar interessado em minimizar a <strong>redução do valor do seu portfólio</strong>. A definição de redução do valor do portfólio, e um exemplo podem ser vistos na Seção 13.5.6.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Comparação de portfólios</h2></hgroup><article  id="comparacao-de-portfolios">
+</article></slide><slide class=""><hgroup><h2>Comparação de portfólios</h2></hgroup><article  id="comparação-de-portfólios">
 
 <ul>
 <li><p>Por fim, podemos estar interessados em comparar a performance de portfólios com alocações diferentes. Essas comparações podem ser feitas através das medidas de retorno e medidas de risco.</p></li>

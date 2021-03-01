@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "23 de maio de 2018"
+date: "02 de março de 2021"
 subtitle: "18 - Finanças: alocação de portfólios"
 
 output:
@@ -306,7 +306,7 @@ head(Nas)
 
 ## Retornos 
 
-- A partir dos dados que baixamos, vamos definir algumas quantidades mais apropriadas para modelar com uma distribuição estatísticas.
+- A partir dos dados que baixamos, vamos definir algumas quantidades mais apropriadas para modelar com uma distribuição estatística.
 
 - Por exemplo, uma das transformações mais comuns é para obter os <span class="black">**retornos**</span>:
 
@@ -386,6 +386,12 @@ plot(1:nrow(EuStockMarkets), pftPerf(x, w), type = "l",
      xlab = "Date", ylab = "Wealth")
 ```
 
+
+## <span class="green3">**Exercício**</span>
+
+- Repetir o gráfico usando os dados da NASDAQ.
+
+- Nesse caso, assumir um portfólio apenas com este índice (peso de 100\%).
 
 ```{r echo=FALSE}
 
