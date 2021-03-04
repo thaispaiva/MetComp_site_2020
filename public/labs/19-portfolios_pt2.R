@@ -35,7 +35,7 @@ longOnly <- function(x) {
 
 
 ## Dados NASDAQ
-file = "../datasets/NASDAQ/nasdaq.csv"
+file = "../datasets/nasdaq.csv"
 nas = read.csv(file, colClasses = c("Date", rep("numeric",10)))
 head(nas)
 id = names(nas)[-1]
@@ -88,14 +88,14 @@ MV_QP <- function(x, target, Sigma = cov(x), ...,
 
 
 ## Exemplo - retorno alvo = média dos retornos
-w <- MV_QP(x, mean(x))
-round(w,4)
+w <- MV_QP(x, target=mean(x))
+round(w,4) # pesos 'ótimos'
 
 ## restrições atendidas?
 all.equal( c( t(w)%*%col_means(x) ) , mean(x) )   # retorno alvo
 all.equal( sum(w) , 1 )                           # investimento total 
 # sum(w) == 1
-all(w >= 0)                                       # long only
+all(round(w,10) >= 0)                                       # long only
 
 
 ## gráfico com os pesos de cada ativo
@@ -116,7 +116,7 @@ t(u)%*%col_means(x) # retorno
 which(col_means(x)==min(col_means(x)))
 
 
-w <- MV_QP(x, min(col_means(x)))
+w <- MV_QP(x, target=min(col_means(x)))
 round(w, 4)
 
 
@@ -128,7 +128,7 @@ barplot(w, ylim = c(0, 1), las = 2,
 ## restrições atendidas?
 all.equal( c(t(w)%*%col_means(x)) , min(col_means(x)) )  # retorno alvo
 all.equal(sum(w) , 1)                                    # investimento total 
-all(round(w,4) >= 0)                                     # long only
+all(round(w,10) >= 0)                                     # long only
 # all(w >= 0)
 
 

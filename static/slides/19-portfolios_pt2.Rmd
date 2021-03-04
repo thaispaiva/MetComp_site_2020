@@ -164,15 +164,17 @@ longOnly <- function(x) {
 include_graphics("img/nasdaq.png")
 ``` 
 
+* FVX = United States 5-Year Bond Yield; \
+* TYX = United States 30-Year Bond Yield
 
 
 ## Dados índices NASDAQ
 
-- Foram extraídos o valor de cada índice entre 24/05/2017 e 23/05/2018 (site: <https://www.investing.com>)
+- Foram extraídos o valor de cada índice entre 01/03/2020 e 01/03/2021 (site: <https://www.investing.com>)
 
 ```{r results='hide'}
 ## Dados NASDAQ
-file = "../datasets/NASDAQ/nasdaq.csv"
+file = "../datasets/nasdaq.csv"
 nas = read.csv(file, colClasses = c("Date", rep("numeric",10)))
 head(nas)
 id = names(nas)[-1]
@@ -297,8 +299,8 @@ MV_QP <- function(x, target, Sigma = cov(x), ...,
 
 ```{r}
 ## Exemplo - retorno alvo = média dos retornos
-w <- MV_QP(x, mean(x))
-round(w,4)
+w <- MV_QP(x, target=mean(x))
+round(w,4) # pesos 'ótimos'
 ```
 
 
@@ -309,7 +311,7 @@ round(w,4)
 all.equal( c( t(w)%*%col_means(x) ) , mean(x) )   # retorno alvo
 all.equal( sum(w) , 1 )                           # investimento total 
 # sum(w) == 1
-all(w >= 0)                                       # long only
+all(round(w,10) >= 0)                                       # long only
 
 ```
 
@@ -356,7 +358,7 @@ which(col_means(x)==min(col_means(x)))
 ## Modelo de Média-Variância | <span class="green3">**Exemplo**</span>
 
 ```{r results='hide'}
-w <- MV_QP(x, min(col_means(x)))
+w <- MV_QP(x, target=min(col_means(x)))
 round(w, 4)
 
 ```
@@ -375,7 +377,7 @@ barplot(w, ylim = c(0, 1), las = 2,
 ## restrições atendidas?
 all.equal( c(t(w)%*%col_means(x)) , min(col_means(x)) )  # retorno alvo
 all.equal(sum(w) , 1)                                    # investimento total 
-all(round(w,4) >= 0)                                     # long only
+all(round(w,10) >= 0)                                     # long only
 # all(w >= 0)
 
 ```

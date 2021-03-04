@@ -311,14 +311,19 @@ Restrições de grupo</span></h3></hgroup><article  id="restrições-restriçõe
 
 <p><img src="img/nasdaq.png" style="display: block; margin: auto;" /></p>
 
+<ul>
+<li>FVX = United States 5-Year Bond Yield;<br/></li>
+<li>TYX = United States 30-Year Bond Yield</li>
+</ul>
+
 </article></slide><slide class=""><hgroup><h2>Dados índices NASDAQ</h2></hgroup><article  id="dados-índices-nasdaq-1">
 
 <ul>
-<li>Foram extraídos o valor de cada índice entre 24/05/2017 e 23/05/2018 (site: <a href='https://www.investing.com' title=''>https://www.investing.com</a>)</li>
+<li>Foram extraídos o valor de cada índice entre 01/03/2020 e 01/03/2021 (site: <a href='https://www.investing.com' title=''>https://www.investing.com</a>)</li>
 </ul>
 
 <pre class = 'prettyprint lang-r'>## Dados NASDAQ
-file = &quot;../datasets/NASDAQ/nasdaq.csv&quot;
+file = &quot;../datasets/nasdaq.csv&quot;
 nas = read.csv(file, colClasses = c(&quot;Date&quot;, rep(&quot;numeric&quot;,10)))
 head(nas)
 id = names(nas)[-1]
@@ -433,11 +438,11 @@ MV_QP &lt;- function(x, target, Sigma = cov(x), ...,
 </ul>
 
 <pre class = 'prettyprint lang-r'>## Exemplo - retorno alvo = média dos retornos
-w &lt;- MV_QP(x, mean(x))
-round(w,4)</pre>
+w &lt;- MV_QP(x, target=mean(x))
+round(w,4) # pesos &#39;ótimos&#39;</pre>
 
 <pre >##   IXBK    NBI    IXK    IXF   IXID   IXIS   IXUT   IXTR    FVX    TYX 
-## 0.0000 0.0000 0.0000 0.2888 0.4748 0.0245 0.0000 0.0000 0.0717 0.1403</pre>
+## 0.0000 0.2867 0.0000 0.0000 0.0000 0.2509 0.3710 0.0000 0.0914 0.0000</pre>
 
 </article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância </h2><h3> <span class="green3">
 <strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-média-variância-exemplo-1">
@@ -446,7 +451,7 @@ round(w,4)</pre>
 all.equal( c( t(w)%*%col_means(x) ) , mean(x) )   # retorno alvo
 all.equal( sum(w) , 1 )                           # investimento total 
 # sum(w) == 1
-all(w &gt;= 0)                                       # long only</pre>
+all(round(w,10) &gt;= 0)                                       # long only</pre>
 
 </article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância </h2><h3> <span class="green3">
 <strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-média-variância-exemplo-2">
@@ -480,13 +485,13 @@ t(u)%*%col_means(x) # retorno</pre>
 <pre class = 'prettyprint lang-r'>## Exemplo - retorno alvo = retorno médio mínimo
 which(col_means(x)==min(col_means(x)))</pre>
 
-<pre >## FVX 
-##   9</pre>
+<pre >## IXID 
+##    5</pre>
 
 </article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância </h2><h3> <span class="green3">
 <strong>Exemplo</strong></span></h3></hgroup><article  id="modelo-de-média-variância-exemplo-5">
 
-<pre class = 'prettyprint lang-r'>w &lt;- MV_QP(x, min(col_means(x)))
+<pre class = 'prettyprint lang-r'>w &lt;- MV_QP(x, target=min(col_means(x)))
 round(w, 4)</pre>
 
 <p><img src="19-portfolios_pt2_files/figure-html/unnamed-chunk-18-1.png" width="720" style="display: block; margin: auto;" /></p>
@@ -497,7 +502,7 @@ round(w, 4)</pre>
 <pre class = 'prettyprint lang-r'>## restrições atendidas?
 all.equal( c(t(w)%*%col_means(x)) , min(col_means(x)) )  # retorno alvo
 all.equal(sum(w) , 1)                                    # investimento total 
-all(round(w,4) &gt;= 0)                                     # long only
+all(round(w,10) &gt;= 0)                                     # long only
 # all(w &gt;= 0)</pre>
 
 </article></slide><slide class=""><hgroup><h2>Modelo de Média-Variância</h2></hgroup><article  id="modelo-de-média-variância-5">
