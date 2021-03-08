@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "06 de junho de 2018"
+date: "09 de março de 2021"
 subtitle: "20 - Tarifação"
 
 output:
@@ -123,8 +123,10 @@ $$\pi = \mathbb{E}(S) = \mathbb{E}(N) \cdot \mathbb{E}(Y) $$
 - Vamos assumir que $N$ tem uma distribuição Binomial, com probabilidade 10% ou 20% de acordo com $Z$. E vamos considerar que a perda é determinística, $Y=100$.
 
 - A seguradora tem duas opções:
-a) cobrar o mesmo prêmio para todos os segurados, $\pi = \mathbb{E}(S) = \mathbb{E}(N) \cdot \mathbb{E}(Y) = 15$
-b) cobrar um prêmio considerando a heterogeneidade, $\pi(z) = \mathbb{E}(S|Z=z) = 10 \mbox{ ou } 20$ dependendo de $z$.
+
+a ) cobrar o mesmo prêmio para todos os segurados, $\pi = \mathbb{E}(S) = \mathbb{E}(N) \cdot \mathbb{E}(Y) = 15$
+
+b ) cobrar um prêmio considerando a heterogeneidade, $\pi(z) = \mathbb{E}(S|Z=z) = 10 \mbox{ ou } 20$ dependendo de $z$.
 
 
 ## Prêmio Puro considerando Heterogeneidade
@@ -338,7 +340,7 @@ summary(regpoislog)
 ```{r}
 ## exponencial dos coeficientes
 ##
-
+exp(coef(regpoislog))
 ```
 
 
@@ -358,7 +360,7 @@ summary(regpoislog)
 ```{r}
 ## exponencial dos coeficientes
 ##
-
+exp(coef(regpoislog))
 ```
 
 

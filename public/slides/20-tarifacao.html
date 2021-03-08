@@ -4,7 +4,6 @@
   <title>Métodos Computacionais para Análise de Risco</title>
 
   <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="generator" content="pandoc" />
 
@@ -64,6 +63,10 @@
       font-style: italic;
     }
 
+    summary {
+      display: list-item;
+    }
+
     slides > slide {
       -webkit-transition: all 0.4s ease-in-out;
       -moz-transition: all 0.4s ease-in-out;
@@ -79,7 +82,81 @@
       transition: opacity 0.6s ease-in 0.4s;
       opacity: 0;
     }
+/* https://github.com/ropensci/plotly/pull/524#issuecomment-468142578 */
+slide:not(.current) .plotly.html-widget{
+  display: block;
+}
 
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+            code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode { white-space: pre; position: relative; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    code.sourceCode { white-space: pre-wrap; }
+    code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+        
     slides > slide:not(.nobackground):before {
       font-size: 12pt;
       content: "";
@@ -112,7 +189,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">06 de junho de 2018</p>
+            <p style="margin-top: 6px; margin-left: -2px;">09 de março de 2021</p>
           </hgroup>
   </slide>
 
@@ -128,7 +205,7 @@
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Tarifação de Seguros</h2></hgroup><article  id="tarifacao-de-seguros">
+</article></slide><slide class=""><hgroup><h2>Tarifação de Seguros</h2></hgroup><article  id="tarifação-de-seguros">
 
 <ul>
 <li><p>Vimos na Parte III do curso como calcular Seguros e Anuidades de Vida, isto é, contratos cujos pagamentos dependem de eventos incertos relacionados à mortalidade e sobrevivência de vidas.</p></li>
@@ -136,7 +213,7 @@
 <li><p>E para calcular um seguro de carro? E um seguro residencial? E um plano de saúde? (<strong>Ramo Não-Vida</strong>)</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Tarifação de Seguros</h2></hgroup><article  id="tarifacao-de-seguros-1">
+</article></slide><slide class=""><hgroup><h2>Tarifação de Seguros</h2></hgroup><article  id="tarifação-de-seguros-1">
 
 <ul>
 <li><p>Para seguros do <strong>Ramo Não-Vida</strong>, vamos usar dados históricos para construir <span class="black">
@@ -168,7 +245,7 @@ Princípio do valor esperado:</span></p>
 
 <p>\[S_t = \sum_{i=1}^{N_t} Y_i \] com \(S_t=0\) se \(N_t=0\).</p>
 
-</article></slide><slide class=""><hgroup><h2>Prêmio Puro</h2></hgroup><article  id="premio-puro">
+</article></slide><slide class=""><hgroup><h2>Prêmio Puro</h2></hgroup><article  id="prêmio-puro">
 
 <ul>
 <li><p>Se \(\alpha=0\), o prêmio é chamado de <span class="blue3">
@@ -177,7 +254,7 @@ Princípio do valor esperado:</span></p>
 <li><p>No entanto, de acordo com a <a href='https://en.wikipedia.org/wiki/Ruin_theory' title=''>Teoria da Ruína</a>, sabemos que a ruína será inevitável quando não há carregamento.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Prêmio Puro</h2></hgroup><article  id="premio-puro-1">
+</article></slide><slide class=""><hgroup><h2>Prêmio Puro</h2></hgroup><article  id="prêmio-puro-1">
 
 <ul>
 <li><p>O primeiro passo é calcular \(\mathbb{E}(S)\) para \(S=S_1\), o total anual.</p></li>
@@ -196,27 +273,26 @@ Princípio do valor esperado:</span></p>
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Prêmio Puro considerando Heterogeneidade</h2></hgroup><article  id="premio-puro-considerando-heterogeneidade">
+</article></slide><slide class=""><hgroup><h2>Prêmio Puro considerando Heterogeneidade</h2></hgroup><article  id="prêmio-puro-considerando-heterogeneidade">
 
 <ul>
 <li><p>O prêmio puro do slide anterior considera apenas a média geral para todos os segurados, assumindo um risco homogêneo.</p></li>
 <li><p>No entanto, sabemos que um modelo mais realista seria considerar riscos diferentes, ou <em>heterogeneidade</em>.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Prêmio Puro considerando Heterogeneidade</h2></hgroup><article  id="premio-puro-considerando-heterogeneidade-1">
+</article></slide><slide class=""><hgroup><h2>Prêmio Puro considerando Heterogeneidade</h2></hgroup><article  id="prêmio-puro-considerando-heterogeneidade-1">
 
 <ul>
 <li><p>Vamos considerar o caso em que a heterogeneidade pode ser observada através de uma variável binária \(Z\) (por exemplo, risco baixo e risco alto com probabilidade 50% em cada).</p></li>
 <li><p>Vamos assumir que \(N\) tem uma distribuição Binomial, com probabilidade 10% ou 20% de acordo com \(Z\). E vamos considerar que a perda é determinística, \(Y=100\).</p></li>
-<li>A seguradora tem duas opções:</li>
+<li><p>A seguradora tem duas opções:</p></li>
 </ul>
 
-<ol>
-<li>cobrar o mesmo prêmio para todos os segurados, \(\pi = \mathbb{E}(S) = \mathbb{E}(N) \cdot \mathbb{E}(Y) = 15\)</li>
-<li>cobrar um prêmio considerando a heterogeneidade, \(\pi(z) = \mathbb{E}(S|Z=z) = 10 \mbox{ ou } 20\) dependendo de \(z\).</li>
-</ol>
+<p>a ) cobrar o mesmo prêmio para todos os segurados, \(\pi = \mathbb{E}(S) = \mathbb{E}(N) \cdot \mathbb{E}(Y) = 15\)</p>
 
-</article></slide><slide class=""><hgroup><h2>Prêmio Puro considerando Heterogeneidade</h2></hgroup><article  id="premio-puro-considerando-heterogeneidade-2">
+<p>b ) cobrar um prêmio considerando a heterogeneidade, \(\pi(z) = \mathbb{E}(S|Z=z) = 10 \mbox{ ou } 20\) dependendo de \(z\).</p>
+
+</article></slide><slide class=""><hgroup><h2>Prêmio Puro considerando Heterogeneidade</h2></hgroup><article  id="prêmio-puro-considerando-heterogeneidade-2">
 
 <ul>
 <li><p>Isso pode ser perigoso se existirem duas seguradoras com modelos diferentes de tarifação. Os segurados de baixo risco irão preferir a seguradora que cobrar de acordo com b), enquanto segurados de alto risco irão preferir a seguradora que cobrar a).</p></li>
@@ -226,7 +302,7 @@ Princípio do valor esperado:</span></p>
 
 <p>\[\pi(z) = \mathbb{E}(S|Z=z) = \mathbb{E}(N|Z=z) \cdot \mathbb{E}(Y|Z=z) \]</p>
 
-</article></slide><slide class=""><hgroup><h2>Prêmio Puro considerando Heterogeneidade</h2></hgroup><article  id="premio-puro-considerando-heterogeneidade-3">
+</article></slide><slide class=""><hgroup><h2>Prêmio Puro considerando Heterogeneidade</h2></hgroup><article  id="prêmio-puro-considerando-heterogeneidade-3">
 
 <ul>
 <li><p>O problema é que a <strong>heterogeneidade</strong> nem sempre é totalmente observável.</p></li>
@@ -237,7 +313,7 @@ Princípio do valor esperado:</span></p>
 
 <p>\[\pi(\boldsymbol{x}) = \mathbb{E}(S|\boldsymbol{X}=\boldsymbol{x}) = \mathbb{E}(N|\boldsymbol{X}=\boldsymbol{x}) \cdot \mathbb{E}(Y|\boldsymbol{X}=\boldsymbol{x}) \]</p>
 
-</article></slide><slide class=""><hgroup><h2>Prêmio Puro considerando Heterogeneidade</h2></hgroup><article  id="premio-puro-considerando-heterogeneidade-4">
+</article></slide><slide class=""><hgroup><h2>Prêmio Puro considerando Heterogeneidade</h2></hgroup><article  id="prêmio-puro-considerando-heterogeneidade-4">
 
 <ul>
 <li><p>Nosso objetivo é propor modelos para estimar:</p>
@@ -250,9 +326,9 @@ Princípio do valor esperado:</span></p>
 </ul></li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Modelo para a Frequência</h2></hgroup><article  id="modelo-para-a-frequencia">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Modelo para a Frequência</h2></hgroup><article  id="modelo-para-a-frequência">
 
-</article></slide><slide class=""><hgroup><h2>Modelo para a Frequência</h2></hgroup><article  id="modelo-para-a-frequencia-1">
+</article></slide><slide class=""><hgroup><h2>Modelo para a Frequência</h2></hgroup><article  id="modelo-para-a-frequência-1">
 
 <ul>
 <li><p>Vamos começar considerando modelos para a frequência de indenizações \(\mathbb{E}(N|\boldsymbol{X}=\boldsymbol{x})\).</p></li>
@@ -266,7 +342,7 @@ Princípio do valor esperado:</span></p>
 <li><p>Isso quer dizer que o número de eventos tem incrementos independentes, e que a quantidade de indenizações observadas durante o intervalo de tempo \([t,t+h]\) tem distribuição Poisson(\(\lambda \cdot h\)).</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Modelo Poisson </h2><h3> Exposição</h3></hgroup><article  id="modelo-poisson-exposicao">
+</article></slide><slide class=""><hgroup><h2>Modelo Poisson </h2><h3> Exposição</h3></hgroup><article  id="modelo-poisson-exposição">
 
 <ul>
 <li><p>Para um segurado \(i\), muitas vezes não temos o número de indenizações anual, isto é, \(N_i\) para o período \([0,1]\).</p></li>
@@ -400,7 +476,7 @@ summary(freMTPLfreq.f)</pre>
 ## 
 ## Number of Fisher Scoring iterations: 6</pre>
 
-</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com uma variável categórica</h3></hgroup><article  id="tarifacao-modelo-com-uma-variavel-categorica">
+</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com uma variável categórica</h3></hgroup><article  id="tarifação-modelo-com-uma-variável-categórica">
 
 <ul>
 <li>Vamos considerar apenas uma covariável: tipo de combustível (diesel ou regular).</li>
@@ -416,7 +492,7 @@ tapply(vY, X1, sum)/tapply(vE, X1, sum)</pre>
 <pre >##     Diesel    Regular 
 ## 0.07467412 0.06515364</pre>
 
-</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com uma variável categórica</h3></hgroup><article  id="tarifacao-modelo-com-uma-variavel-categorica-1">
+</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com uma variável categórica</h3></hgroup><article  id="tarifação-modelo-com-uma-variável-categórica-1">
 
 <ul>
 <li>Vamos ajustar um modelo de Poisson com essa covariável e <strong>sem intercepto</strong>:</li>
@@ -427,16 +503,20 @@ df &lt;- data.frame(vY,vE,X1)
 regpoislog &lt;- glm(vY~0+X1+offset(log(vE)),data=df,family=poisson(link=&quot;log&quot;))
 summary(regpoislog)</pre>
 
-</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com uma variável categórica</h3></hgroup><article  id="tarifacao-modelo-com-uma-variavel-categorica-2">
+</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com uma variável categórica</h3></hgroup><article  id="tarifação-modelo-com-uma-variável-categórica-2">
 
 <ul>
 <li>Interpretando os coeficientes:</li>
 </ul>
 
 <pre class = 'prettyprint lang-r'>## exponencial dos coeficientes
-##</pre>
+##
+exp(coef(regpoislog))</pre>
 
-</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com uma variável categórica</h3></hgroup><article  id="tarifacao-modelo-com-uma-variavel-categorica-3">
+<pre >##   X1Diesel  X1Regular 
+## 0.07467412 0.06515364</pre>
+
+</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com uma variável categórica</h3></hgroup><article  id="tarifação-modelo-com-uma-variável-categórica-3">
 
 <ul>
 <li>Modelo <strong>com intercepto</strong>:</li>
@@ -451,9 +531,13 @@ summary(regpoislog)</pre>
 </ul>
 
 <pre class = 'prettyprint lang-r'>## exponencial dos coeficientes
-##</pre>
+##
+exp(coef(regpoislog))</pre>
 
-</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com uma variável categórica</h3></hgroup><article  id="tarifacao-modelo-com-uma-variavel-categorica-4">
+<pre >## (Intercept)   X1Regular 
+##  0.07467412  0.87250624</pre>
+
+</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com uma variável categórica</h3></hgroup><article  id="tarifação-modelo-com-uma-variável-categórica-4">
 
 <ul>
 <li><p>Nesse modelo, a categoria de referência é <code>Diesel</code> que tem frequência de 0,0746.</p></li>
@@ -461,7 +545,7 @@ summary(regpoislog)</pre>
 <li><p>Essa seria a frequência estimada para calcular o prêmio.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com covariáveis contínuas</h3></hgroup><article  id="tarifacao-modelo-com-covariaveis-continuas">
+</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com covariáveis contínuas</h3></hgroup><article  id="tarifação-modelo-com-covariáveis-contínuas">
 
 <ul>
 <li>Categorizamos algumas variáveis arbitrariamente. E se quisermos trabalhar com as variáveis contínuas?</li>
@@ -475,7 +559,7 @@ summary(regpoislog)</pre>
 <li><p>Compare esse ajuste com um modelo com a idade contínua.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com covariáveis contínuas</h3></hgroup><article  id="tarifacao-modelo-com-covariaveis-continuas-1">
+</article></slide><slide class=""><hgroup><h2>Tarifação </h2><h3> Modelo com covariáveis contínuas</h3></hgroup><article  id="tarifação-modelo-com-covariáveis-contínuas-1">
 
 <ul>
 <li><p>Uma limitação desse modelo é restringir a uma relação linear entre o número de indenizações e a idade.</p></li>
@@ -487,7 +571,7 @@ summary(regpoislog)</pre>
 </ul></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Tarifação</h2></hgroup><article  id="tarifacao">
+</article></slide><slide class=""><hgroup><h2>Tarifação</h2></hgroup><article  id="tarifação">
 
 <ul>
 <li>Comparação entre a predição dos modelos para idade:</li>
@@ -495,7 +579,7 @@ summary(regpoislog)</pre>
 
 <p><img src="img/tarif1.png" width="100%" style="display: block; margin: auto;" /></p>
 
-</article></slide><slide class=""><hgroup><h2>Tarifação</h2></hgroup><article  id="tarifacao-1">
+</article></slide><slide class=""><hgroup><h2>Tarifação</h2></hgroup><article  id="tarifação-1">
 
 <p><img src="img/tarif2.png" width="100%" style="display: block; margin: auto;" /></p></article></slide>
 
