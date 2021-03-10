@@ -1,6 +1,6 @@
 ---
 title: "Trabalho Final"
-date: "Apresentações: **25/06/2018** e **27/06/2018** em sala <br/> Entrega: arquivo .Rmd até **27/06/2018** via Moodle"
+date: "Apresentações: **25/03/2021** e **30/03/2021** durante a aula <br/> Entrega: arquivo .Rmd até **30/03/2021** via Moodle"
 output: 
   html_document: 
     css: hw.css
@@ -14,9 +14,9 @@ output:
 
 ## Instruções
 
-- O trabalho será feito em duplas. Cada dupla deverá preencher este [formulário](https://goo.gl/9tUL97) até o dia 30/05/18 com os dados do seu trabalho, e escolher o horário da sua apresentação.
+- O trabalho será feito em duplas. Cada dupla deverá preencher este [formulário](https://docs.google.com/spreadsheets/d/1fbBo-jIbAgh50d0MiCB9T8OmvdePhbV__7OO01wKxQ4/edit?usp=sharing) até o dia 16/03/21 com os dados do seu trabalho, e escolher o horário da sua apresentação.
 
-- As apresentações terão duração de 15 minutos cada, e serão feitas durante as aulas dos dias **25 e 27 de junho**.
+- As apresentações terão duração de 15 minutos cada, e serão feitas durante as aulas dos dias **25 e 30 de março**.
 
 - Os slides deverão ser feitos com o `rmarkdown`. 
 
@@ -24,7 +24,7 @@ output:
   
   - Depois, é só editar o template para incluir as suas informações (*Obs.: só edite o arquivo após ter certeza que ele compilou corretamente*).
   
-- Cada dupla deverá submeter **apenas o arquivo .Rmd** no Moodle até o dia 27/06/18.
+- Cada dupla deverá submeter **apenas o arquivo .Rmd** no Moodle até o dia 30/03/2021.
 
 
 ## Conteúdo
@@ -52,20 +52,20 @@ output:
 </div>
 
 
-## Trabalhos
+<!-- ## Trabalhos -->
 
-<div style="width: 400px; margin:0 auto;" >
+<!-- <div style="width: 400px; margin:0 auto;" > -->
 
-| Dupla                               | Arquivo .Rmd    | Slides    |
-|-------------------------------------|:---------------:|:---------:|
-|1) Leonardo Borba e Luanvir          | <a href="trabalhos/1-LeonardoB_Luanvir.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/1-LeonardoB_Luanvir.html"><i class="fa fa-file-image-o fa-lg"></i></a> |
-|2) Leonardo Silva e Mateus           | <a href="trabalhos/2-LeonardoS_Mateus.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/2-LeonardoS_Mateus.html"><i class="fa fa-file-image-o fa-lg"></i></a> |
-|3) Fernanda e Verônica               | <a href="trabalhos/3-Fernanda_Veronica.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/3-Fernanda_Veronica.html"><i class="fa fa-file-image-o fa-lg"></i></a> |
-|4) Ygor Viana e Tomaz                | <a href="trabalhos/4-Ygor_Tomaz.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/4-Ygor_Tomaz.html"><i class="fa fa-file-image-o fa-lg"></i></a> |
-|5) Bruno e Luís Henrique             | <a href="trabalhos/5-Bruno_Luis.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/5-Bruno_Luis.html"><i class="fa fa-file-image-o fa-lg"></i></a> |
-|6) Guilherme Maciel e Igor Mazzeto   | <a href="trabalhos/6-Guilherme_Igor.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/6-Guilherme_Igor.html"><i class="fa fa-file-image-o fa-lg"></i></a> |
-|7) Beatriz e Iara                    | <a href="trabalhos/7-Beatriz_Iara.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/7-Beatriz_Iara.html"><i class="fa fa-file-image-o fa-lg"></i></a> |
-|8) Taís e Sérgio                     | <a href="trabalhos/8-Tais_Sergio.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/8-Tais_Sergio.html"><i class="fa fa-file-image-o fa-lg"></i></a> |
-|9) Luísa e Letícia                   | <a href="trabalhos/9-Luisa_Leticia.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/9-Luisa_Leticia.html"><i class="fa fa-file-image-o fa-lg"></i></a> |
+<!-- | Dupla                               | Arquivo .Rmd    | Slides    | -->
+<!-- |-------------------------------------|:---------------:|:---------:| -->
+<!-- |1) Leonardo Borba e Luanvir          | <a href="trabalhos/1-LeonardoB_Luanvir.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/1-LeonardoB_Luanvir.html"><i class="fa fa-file-image-o fa-lg"></i></a> | -->
+<!-- |2) Leonardo Silva e Mateus           | <a href="trabalhos/2-LeonardoS_Mateus.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/2-LeonardoS_Mateus.html"><i class="fa fa-file-image-o fa-lg"></i></a> | -->
+<!-- |3) Fernanda e Verônica               | <a href="trabalhos/3-Fernanda_Veronica.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/3-Fernanda_Veronica.html"><i class="fa fa-file-image-o fa-lg"></i></a> | -->
+<!-- |4) Ygor Viana e Tomaz                | <a href="trabalhos/4-Ygor_Tomaz.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/4-Ygor_Tomaz.html"><i class="fa fa-file-image-o fa-lg"></i></a> | -->
+<!-- |5) Bruno e Luís Henrique             | <a href="trabalhos/5-Bruno_Luis.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/5-Bruno_Luis.html"><i class="fa fa-file-image-o fa-lg"></i></a> | -->
+<!-- |6) Guilherme Maciel e Igor Mazzeto   | <a href="trabalhos/6-Guilherme_Igor.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/6-Guilherme_Igor.html"><i class="fa fa-file-image-o fa-lg"></i></a> | -->
+<!-- |7) Beatriz e Iara                    | <a href="trabalhos/7-Beatriz_Iara.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/7-Beatriz_Iara.html"><i class="fa fa-file-image-o fa-lg"></i></a> | -->
+<!-- |8) Taís e Sérgio                     | <a href="trabalhos/8-Tais_Sergio.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/8-Tais_Sergio.html"><i class="fa fa-file-image-o fa-lg"></i></a> | -->
+<!-- |9) Luísa e Letícia                   | <a href="trabalhos/9-Luisa_Leticia.Rmd"><i class="fa fa-keyboard-o fa-lg"></i></a> | <a href="trabalhos/9-Luisa_Leticia.html"><i class="fa fa-file-image-o fa-lg"></i></a> | -->
 
-</div>
+<!-- </div> -->

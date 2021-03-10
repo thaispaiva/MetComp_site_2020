@@ -167,8 +167,8 @@ summary(freMTPLsev$ClaimAmount)
 ```{r echo=FALSE, fig.align='center'}
 ## histogramas
 par(mfrow=c(1,2))
-hist(freMTPLsev$ClaimAmount)
-hist(log(freMTPLsev$ClaimAmount))
+hist(freMTPLsev$ClaimAmount, main="ClaimAmount")
+hist(log(freMTPLsev$ClaimAmount), main="log(ClaimAmount)")
 
 ```
 

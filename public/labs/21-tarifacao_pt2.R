@@ -42,8 +42,8 @@ summary(freMTPLsev$ClaimAmount)
 
 ## histogramas
 par(mfrow=c(1,2))
-hist(freMTPLsev$ClaimAmount)
-hist(log(freMTPLsev$ClaimAmount))
+hist(freMTPLsev$ClaimAmount, main="ClaimAmount")
+hist(log(freMTPLsev$ClaimAmount), main="log(ClaimAmount)")
 
 
 ## Unificando os bancos
