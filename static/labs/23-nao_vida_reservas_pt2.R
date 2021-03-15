@@ -1,6 +1,9 @@
 ## EST171 - Métodos Computacionais para Análise de Risco
 ## Código da aula 23 - Ramo Não-Vida (reservas) - parte 2
 
+
+
+
 ## Dados de pagamentos de indenizações - Seguros contra terceiros U.K.
 n <- 7
 Claims <- data.frame(originf = factor(rep(2007:2013, n:1)),
@@ -25,6 +28,7 @@ cum.triangle <- t(apply(inc.triangle, 1, cumsum))
 ## pagamentos acumulados
 Claims$cum.paid <- cum.triangle[with(Claims, cbind(originf, dev))]
 
+
 names(Claims)[3:4] <- c("inc.paid.k", "cum.paid.k")
 ids <- with(Claims, cbind(originf, dev))
 
@@ -35,8 +39,10 @@ Claims <- within(Claims,{
   devf <- factor(dev)
 })
 
+
 head(Claims)
 tail(Claims)
+
 
 ## modelos de regressão Chain Ladder
 delta <- 0:2
@@ -45,7 +51,9 @@ ATA <- sapply(delta, function(d)
 )
 dimnames(ATA)[[2]] <- paste("Delta = ", delta)
 
+
 ATA
+
 
 ## gráfico do resultado dos modelos
 require(lattice)
@@ -63,24 +71,31 @@ xyplot(cum.paid.kp1 ~ cum.paid.k | devf,
        })
 
 
+
 ## Método Mack
 require(ChainLadder)
+
 (mack <- MackChainLadder(cum.triangle, weights=1, alpha=1, est.sigma="Mack"))
+
 
 ## gráfico dos valores estimados - modelo Mack
 plot(mack, lattice=TRUE, layout=c(4,2))
 
+
 ## gráfico dos resíduos 
 plot(mack)
+
 
 
 ## Modelo de Regressão de Poisson
 preg <- glm(inc.paid.k ~ originf + devf,
             data=Claims, family=poisson(link = "log"))
 
+
 summary(preg)
 
-## criando a matriz para guardar os 
+
+## criando a matriz para guardar os incrementos
 allClaims <- data.frame(origin = sort(rep(2007:2013, n)),
                         dev = rep(1:n,n))
 allClaims <- within(allClaims, {
@@ -93,42 +108,55 @@ allClaims <- within(allClaims, {
 pred.inc.tri <- t(matrix(predict(preg,type="response",
                                  newdata=allClaims), n, n))
 
+
 pred.inc.tri
+
 
 ## reserva
 sum(predict(preg,type="response", newdata=subset(allClaims, cal > 2013)))
 
+
 ## fatores de desenvolvimento
 df <- c(0, coef(preg)[(n+1):(2*n-1)])
 sapply(2:7, function(i) sum(exp(df[1:i]))/sum(exp(df[1:(i-1)])))
+
 
 ## testando super-dispersão
 require(AER)
 dispersiontest(preg)
 
 
+
 ## Modelo Quasi-Poisson
 odpreg <- glm(inc.paid.k ~ originf + devf, data=Claims,
               family=quasipoisson)
 
+
 summary(odpreg)
+
 
 ## gráfico de resíduos
 op <- par(mfrow=c(2,2), oma = c(0, 0, 3, 0))
 plot(preg)
 par(op)
 
+
 (odp <- glmReserve(as.triangle(inc.triangle), var.power=1, cum=FALSE))
+
 
 
 ## Bootstrap Chain-Ladder
 set.seed(1)
 B <- BootChainLadder(cum.triangle, R=1000, process.distr="od.pois")
+
 B
+
 
 plot(B)
 
+
 quantile(B, c(0.75,0.95,0.99,0.995))
+
 
 ny <- (col(inc.triangle) == (nrow(inc.triangle) - row(inc.triangle) + 2))
 paid.ny <- apply(B$IBNR.Triangles, 3,
@@ -136,6 +164,7 @@ paid.ny <- apply(B$IBNR.Triangles, 3,
                              sum(next.year.paid) })
 paid.ny.995 <- B$IBNR.Triangles[,,order(paid.ny)[round(B$R*0.995)]]
 inc.triangle.ny <- inc.triangle
+
 
 (inc.triangle.ny[ny] <- paid.ny.995[ny])
 

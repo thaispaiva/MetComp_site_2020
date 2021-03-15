@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "13 de junho de 2018"
+date: "16 de março de 2021"
 subtitle: "22 - Ramo Não-Vida: reservas"
 
 output:
@@ -169,7 +169,7 @@ inc.triangle
 
 ## Triângulos Cumulativos
 
-- A última diagonal preenchida do triângulo acumulado apresenta os valores acumulados pagos para cada ano de origem.
+- A última diagonal preenchida do triângulo acumulado apresenta os valores acumulados *pagos no último ano* para cada ano de origem.
 
 ```{r}
 ## diagonal - pagamentos acumulados de cada período de origem
