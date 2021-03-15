@@ -2,7 +2,7 @@
 title: "Métodos Computacionais para Análise de Risco"
 author: 'Prof.: Thais Paiva'
 
-date: "18 de junho de 2018"
+date: "18 de março de 2021"
 subtitle: "23 - Ramo Não-Vida: reservas (parte 2)"
 
 output:
@@ -226,7 +226,7 @@ com $w_{ik} \in [0;1]$, $\alpha \in \{0,1,2\}$ sendo que $\alpha=2-\delta$.
 
 ## Método *Mack*
 
-- O modelo *Mack* assume que os fatores para cada período de desenvolvimento são constantes para todos os períodos de origem (condição 1), qye a volatilidade decresce à medida que os pagamentos são feitos (condição 2), e todos os períodos de origem são independentes e não há mudança estrutural ou sazonalidade (condição 3).
+- O modelo *Mack* assume que os fatores para cada período de desenvolvimento são constantes para todos os períodos de origem (condição 1), que a volatilidade decresce à medida que os pagamentos são feitos (condição 2), e todos os períodos de origem são independentes e não há mudança estrutural ou sazonalidade (condição 3).
 
 - Se essas condições são válidas, o modelo fornece um estimador não-enviesado para os pagamentos futuros. $\hat{f}_k$ é um estimador não viciado para $f_k$:
 
@@ -331,7 +331,7 @@ summary(preg)
 - Prevendo os pagamentos incrementais:
 
 ```{r}
-## criando a matriz para guardar os 
+## criando a matriz para guardar os incrementos
 allClaims <- data.frame(origin = sort(rep(2007:2013, n)),
                         dev = rep(1:n,n))
 allClaims <- within(allClaims, {
@@ -377,7 +377,7 @@ sapply(2:7, function(i) sum(exp(df[1:i]))/sum(exp(df[1:(i-1)])))
 
 - A limitação do modelo de Poisson é o problema de superdispersão.
 
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 ## testando super-dispersão
 require(AER)
 dispersiontest(preg)
@@ -433,7 +433,7 @@ summary(odpreg)
 
 ## Modelo Quasi-Poisson
 
-```{r echo=FALSE, fig.align='center', out.height="100%", message=FALSE, warning=FALSE}
+```{r echo=FALSE, fig.align='center', out.height="110%", message=FALSE, warning=FALSE}
 ## gráfico de resíduos
 op <- par(mfrow=c(2,2), oma = c(0, 0, 3, 0))
 plot(preg)

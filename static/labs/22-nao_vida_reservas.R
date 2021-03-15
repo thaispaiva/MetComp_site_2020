@@ -1,6 +1,9 @@
 ## EST171 - Métodos Computacionais para Análise de Risco
 ## Código da aula 22 - Ramo Não-Vida (reservas)
 
+
+
+
 ## Dados de pagamentos de indenizações - Seguros contra terceiros U.K.
 n <- 7
 Claims <- data.frame(originf = factor(rep(2007:2013, n:1)),
@@ -12,6 +15,7 @@ Claims <- data.frame(originf = factor(rep(2007:2013, n:1)),
                                   2320, 5102, 4548, 6283))
 Claims
 
+
 ## transformando em triângulo de desenvolvimento
 (inc.triangle <- with(Claims, {
   M <- matrix(nrow=n, ncol=n,
@@ -20,15 +24,21 @@ Claims
   M
 }))
 
+
+
+
 ## triângulo acumulado
 (cum.triangle <- t(apply(inc.triangle, 1, cumsum)))
+
 
 ## diagonal - pagamentos acumulados de cada período de origem
 (latest.paid <- cum.triangle[row(cum.triangle) == n - col(cum.triangle) + 1])
 
+
 ## pagamentos acumulados
 Claims$cum.paid <- cum.triangle[with(Claims, cbind(originf, dev))]
 head(Claims)
+
 
 
 ## Gráfico da sequência de pagamentos individuais e acumulados por origem
@@ -46,6 +56,7 @@ mtext("Incremental and cumulative claims development",
 par(op)
 
 
+
 ## Gráfico dos pagamentos acumulados em painéis
 library(lattice)
 xyplot(cum.paid ~ dev | originf, data=Claims, t="b", layout=c(4,2),
@@ -56,12 +67,15 @@ xyplot(cum.paid ~ dev | originf, data=Claims, t="b", layout=c(4,2),
 ## Métodos determinísticos
 
 
+
 ## fatores de desenvolvimento
 f <- sapply( (n-1):1, function(i) {
   sum(cum.triangle[1:i, n-i+1])/sum(cum.triangle[1:i, n-i]) } )
 
+
 tail <- 1   # último fator de desenvolvimento
 (f <- c(f, tail))
+
 
 ## completando o triângulo
 full.triangle <- cum.triangle
@@ -70,14 +84,18 @@ for(k in 1:(n-1)){
 }
 full.triangle
 
+
 ## total de pagamentos previstos
 (ultimate.paid <- full.triangle[,n])
+
 
 ## fatores de desenvolvimento totais
 (ldf <- rev(cumprod(rev(f))))
 
+
 ## proporção de indenizações estimadas
 (dev.pattern <- 1/ldf)
+
 
 ## reserva
 (reserve <- sum (latest.paid * (ldf - 1)))
