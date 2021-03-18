@@ -1,6 +1,6 @@
 ---
 title: "Trabalho Final"
-date: "Apresentações: **25/03/2021** e **30/03/2021** durante a aula <br/> Entrega: arquivo .Rmd até **30/03/2021** via Moodle"
+date: "Apresentações: **30/03/2021** durante a aula <br/> Entrega: arquivo .Rmd até **30/03/2021** via Moodle"
 output: 
   html_document: 
     css: hw.css
@@ -16,7 +16,7 @@ output:
 
 - O trabalho será feito em duplas. Cada dupla deverá preencher este [formulário](https://docs.google.com/spreadsheets/d/1fbBo-jIbAgh50d0MiCB9T8OmvdePhbV__7OO01wKxQ4/edit?usp=sharing) até o dia 16/03/21 com os dados do seu trabalho, e escolher o horário da sua apresentação.
 
-- As apresentações terão duração de 15 minutos cada, e serão feitas durante as aulas dos dias **25 e 30 de março**.
+- As apresentações terão duração de 15 minutos cada, e serão feitas durante a aula do dia **30 de março**.
 
 - Os slides deverão ser feitos com o `rmarkdown`. 
 
@@ -24,7 +24,7 @@ output:
   
   - Depois, é só editar o template para incluir as suas informações (*Obs.: só edite o arquivo após ter certeza que ele compilou corretamente*).
   
-- Cada dupla deverá submeter **apenas o arquivo .Rmd** no Moodle até o dia 30/03/2021.
+- Cada aluno da dupla deverá submeter **apenas o arquivo .Rmd** no Moodle até o dia 30/03/2021.
 
 
 ## Conteúdo
